@@ -1,2 +1,2 @@
 # Knowledge-Matrix
-An application for an intellectual quiz
+## Приложение для интеллектуального квиза
