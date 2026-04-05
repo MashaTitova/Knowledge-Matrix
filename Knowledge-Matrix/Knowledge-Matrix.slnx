@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/Элементы решения/" />
+  <Project Path="../UsefullClassLibrary/GetQuestions.csproj" Id="ed093e30-e4a0-4ef0-b7bd-217092f63f5d" />
+  <Project Path="Knowledge-Matrix.csproj" />
+</Solution>

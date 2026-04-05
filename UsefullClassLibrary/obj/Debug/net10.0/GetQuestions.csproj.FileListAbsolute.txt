@@ -1,0 +1,12 @@
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\bin\Debug\net10.0\GetQuestions.deps.json
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\bin\Debug\net10.0\GetQuestions.dll
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\bin\Debug\net10.0\GetQuestions.pdb
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\GetQuestions.GeneratedMSBuildEditorConfig.editorconfig
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\GetQuestions.AssemblyInfoInputs.cache
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\GetQuestions.AssemblyInfo.cs
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\GetQuestions.csproj.CoreCompileInputs.cache
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\GetQuestions.sourcelink.json
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\GetQuestions.dll
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\refint\GetQuestions.dll
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\GetQuestions.pdb
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\ref\GetQuestions.dll

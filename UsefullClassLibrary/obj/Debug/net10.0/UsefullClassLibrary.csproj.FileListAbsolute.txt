@@ -1,0 +1,12 @@
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\bin\Debug\net10.0\UsefullClassLibrary.deps.json
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\bin\Debug\net10.0\UsefullClassLibrary.dll
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\bin\Debug\net10.0\UsefullClassLibrary.pdb
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\UsefullClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\UsefullClassLibrary.AssemblyInfoInputs.cache
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\UsefullClassLibrary.AssemblyInfo.cs
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\UsefullClassLibrary.csproj.CoreCompileInputs.cache
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\UsefullClassLibrary.sourcelink.json
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\UsefullClassLibrary.dll
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\refint\UsefullClassLibrary.dll
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\UsefullClassLibrary.pdb
+D:\_git\Knowledge-Matrix\UsefullClassLibrary\obj\Debug\net10.0\ref\UsefullClassLibrary.dll
