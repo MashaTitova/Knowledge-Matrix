@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_KnowledgeMatrix));
             panel_Main = new Panel();
             panel_Question = new Panel();
-            button_3 = new Button();
+            button_Answer3 = new Button();
             button_Answer2 = new Button();
             button_Answer4 = new Button();
             button_Answer1 = new Button();
@@ -39,20 +39,12 @@
             panel_YourLevel = new Panel();
             label_YourLevel = new Label();
             panel_LevelIcon = new Panel();
-            label_YourDifLevel = new Label();
+            label_NumberOfQuestion = new Label();
             label_AskingQuestion = new Label();
-            panel_MenuButtons = new Panel();
-            button_50 = new Button();
-            button_FriendHelp = new Button();
-            button_PeopleHelp = new Button();
-            button_Info = new Button();
-            button_return = new Button();
-            panel_Title = new Panel();
-            panel_Coins = new Panel();
-            label_Coins = new Label();
-            panel_CoinsImage = new Panel();
-            label_KnowlegeMatrix = new Label();
-            label_Quize = new Label();
+            flowLayoutPanel_DifficaltyLevel = new FlowLayoutPanel();
+            button_EasyLevel = new Button();
+            button_MediumLevel = new Button();
+            button_HardLevel = new Button();
             panel_CategoryButtons = new Panel();
             panel_Category4 = new Panel();
             label_Category4 = new Label();
@@ -72,19 +64,25 @@
             panel_Category1 = new Panel();
             label_Category1 = new Label();
             button_Category1 = new Button();
+            panel_MenuButtons = new Panel();
+            button_50 = new Button();
+            button_FriendHelp = new Button();
+            button_PeopleHelp = new Button();
+            button_Info = new Button();
+            button_return = new Button();
+            panel_Title = new Panel();
+            panel_Coins = new Panel();
+            label_Coins = new Label();
+            panel_CoinsImage = new Panel();
+            label_KnowlegeMatrix = new Label();
+            label_Quize = new Label();
             panel_StartGame = new Panel();
             button_Start = new Button();
-            flowLayoutPanel_DifficaltyLevel = new FlowLayoutPanel();
-            button_EasyLevel = new Button();
-            button_MediumLevel = new Button();
-            button_HardLevel = new Button();
             button_StartGame = new Button();
             panel_Main.SuspendLayout();
             panel_Question.SuspendLayout();
             panel_YourLevel.SuspendLayout();
-            panel_MenuButtons.SuspendLayout();
-            panel_Title.SuspendLayout();
-            panel_Coins.SuspendLayout();
+            flowLayoutPanel_DifficaltyLevel.SuspendLayout();
             panel_CategoryButtons.SuspendLayout();
             panel_Category4.SuspendLayout();
             panel_Category2.SuspendLayout();
@@ -92,8 +90,10 @@
             panel_Category5.SuspendLayout();
             panel_Category6.SuspendLayout();
             panel_Category1.SuspendLayout();
+            panel_MenuButtons.SuspendLayout();
+            panel_Title.SuspendLayout();
+            panel_Coins.SuspendLayout();
             panel_StartGame.SuspendLayout();
-            flowLayoutPanel_DifficaltyLevel.SuspendLayout();
             SuspendLayout();
             // 
             // panel_Main
@@ -101,12 +101,12 @@
             panel_Main.BackColor = Color.Transparent;
             panel_Main.BackgroundImage = (Image)resources.GetObject("panel_Main.BackgroundImage");
             panel_Main.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Main.Controls.Add(panel_CategoryButtons);
             panel_Main.Controls.Add(panel_Question);
+            panel_Main.Controls.Add(flowLayoutPanel_DifficaltyLevel);
             panel_Main.Controls.Add(panel_MenuButtons);
             panel_Main.Controls.Add(panel_Title);
-            panel_Main.Controls.Add(panel_CategoryButtons);
             panel_Main.Controls.Add(panel_StartGame);
-            panel_Main.Controls.Add(flowLayoutPanel_DifficaltyLevel);
             panel_Main.Dock = DockStyle.Fill;
             panel_Main.Location = new Point(0, 0);
             panel_Main.Name = "panel_Main";
@@ -116,13 +116,13 @@
             // panel_Question
             // 
             panel_Question.Anchor = AnchorStyles.None;
-            panel_Question.Controls.Add(button_3);
+            panel_Question.Controls.Add(button_Answer3);
             panel_Question.Controls.Add(button_Answer2);
             panel_Question.Controls.Add(button_Answer4);
             panel_Question.Controls.Add(button_Answer1);
             panel_Question.Controls.Add(label_Hints);
             panel_Question.Controls.Add(panel_YourLevel);
-            panel_Question.Controls.Add(label_YourDifLevel);
+            panel_Question.Controls.Add(label_NumberOfQuestion);
             panel_Question.Controls.Add(label_AskingQuestion);
             panel_Question.Location = new Point(0, 300);
             panel_Question.Name = "panel_Question";
@@ -130,20 +130,21 @@
             panel_Question.TabIndex = 5;
             panel_Question.Visible = false;
             // 
-            // button_3
+            // button_Answer3
             // 
-            button_3.Anchor = AnchorStyles.None;
-            button_3.BackColor = Color.FromArgb(128, 255, 128);
-            button_3.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
-            button_3.FlatAppearance.BorderSize = 10;
-            button_3.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_3.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
-            button_3.ForeColor = SystemColors.ButtonHighlight;
-            button_3.Location = new Point(662, 508);
-            button_3.Name = "button_3";
-            button_3.Size = new Size(299, 111);
-            button_3.TabIndex = 14;
-            button_3.UseVisualStyleBackColor = false;
+            button_Answer3.Anchor = AnchorStyles.None;
+            button_Answer3.BackColor = Color.FromArgb(128, 255, 128);
+            button_Answer3.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
+            button_Answer3.FlatAppearance.BorderSize = 10;
+            button_Answer3.FlatAppearance.CheckedBackColor = Color.Teal;
+            button_Answer3.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_Answer3.ForeColor = SystemColors.ButtonHighlight;
+            button_Answer3.Location = new Point(662, 508);
+            button_Answer3.Name = "button_Answer3";
+            button_Answer3.Size = new Size(299, 111);
+            button_Answer3.TabIndex = 14;
+            button_Answer3.UseVisualStyleBackColor = false;
+            button_Answer3.Click += button_Answer3_Click;
             // 
             // button_Answer2
             // 
@@ -159,6 +160,7 @@
             button_Answer2.Size = new Size(308, 111);
             button_Answer2.TabIndex = 13;
             button_Answer2.UseVisualStyleBackColor = false;
+            button_Answer2.Click += button_Answer2_Click;
             // 
             // button_Answer4
             // 
@@ -174,9 +176,11 @@
             button_Answer4.Size = new Size(313, 111);
             button_Answer4.TabIndex = 12;
             button_Answer4.UseVisualStyleBackColor = false;
+            button_Answer4.Click += button_Answer4_Click;
             // 
             // button_Answer1
             // 
+            button_Answer1.AllowDrop = true;
             button_Answer1.Anchor = AnchorStyles.None;
             button_Answer1.BackColor = Color.FromArgb(128, 128, 255);
             button_Answer1.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
@@ -189,6 +193,7 @@
             button_Answer1.Size = new Size(302, 111);
             button_Answer1.TabIndex = 11;
             button_Answer1.UseVisualStyleBackColor = false;
+            button_Answer1.Click += button_Answer1_Click;
             // 
             // label_Hints
             // 
@@ -206,7 +211,7 @@
             // 
             panel_YourLevel.Controls.Add(label_YourLevel);
             panel_YourLevel.Controls.Add(panel_LevelIcon);
-            panel_YourLevel.Location = new Point(956, 12);
+            panel_YourLevel.Location = new Point(1033, 3);
             panel_YourLevel.Name = "panel_YourLevel";
             panel_YourLevel.Size = new Size(260, 73);
             panel_YourLevel.TabIndex = 4;
@@ -232,17 +237,17 @@
             panel_LevelIcon.Size = new Size(88, 67);
             panel_LevelIcon.TabIndex = 7;
             // 
-            // label_YourDifLevel
+            // label_NumberOfQuestion
             // 
-            label_YourDifLevel.Anchor = AnchorStyles.Top;
-            label_YourDifLevel.BackColor = Color.Transparent;
-            label_YourDifLevel.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
-            label_YourDifLevel.ForeColor = Color.WhiteSmoke;
-            label_YourDifLevel.Location = new Point(3, 12);
-            label_YourDifLevel.Name = "label_YourDifLevel";
-            label_YourDifLevel.Size = new Size(924, 73);
-            label_YourDifLevel.TabIndex = 2;
-            label_YourDifLevel.TextAlign = ContentAlignment.TopRight;
+            label_NumberOfQuestion.Anchor = AnchorStyles.Top;
+            label_NumberOfQuestion.BackColor = Color.Transparent;
+            label_NumberOfQuestion.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
+            label_NumberOfQuestion.ForeColor = Color.WhiteSmoke;
+            label_NumberOfQuestion.Location = new Point(3, 12);
+            label_NumberOfQuestion.Name = "label_NumberOfQuestion";
+            label_NumberOfQuestion.Size = new Size(380, 73);
+            label_NumberOfQuestion.TabIndex = 2;
+            label_NumberOfQuestion.TextAlign = ContentAlignment.TopRight;
             // 
             // label_AskingQuestion
             // 
@@ -252,6 +257,297 @@
             label_AskingQuestion.Name = "label_AskingQuestion";
             label_AskingQuestion.Size = new Size(1268, 254);
             label_AskingQuestion.TabIndex = 0;
+            label_AskingQuestion.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // flowLayoutPanel_DifficaltyLevel
+            // 
+            flowLayoutPanel_DifficaltyLevel.Anchor = AnchorStyles.None;
+            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_EasyLevel);
+            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_MediumLevel);
+            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_HardLevel);
+            flowLayoutPanel_DifficaltyLevel.Location = new Point(400, 400);
+            flowLayoutPanel_DifficaltyLevel.Name = "flowLayoutPanel_DifficaltyLevel";
+            flowLayoutPanel_DifficaltyLevel.Size = new Size(516, 422);
+            flowLayoutPanel_DifficaltyLevel.TabIndex = 3;
+            flowLayoutPanel_DifficaltyLevel.Visible = false;
+            // 
+            // button_EasyLevel
+            // 
+            button_EasyLevel.Anchor = AnchorStyles.None;
+            button_EasyLevel.BackColor = SystemColors.Highlight;
+            button_EasyLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
+            button_EasyLevel.FlatAppearance.BorderSize = 10;
+            button_EasyLevel.FlatAppearance.CheckedBackColor = Color.Teal;
+            button_EasyLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_EasyLevel.ForeColor = SystemColors.ButtonHighlight;
+            button_EasyLevel.Location = new Point(3, 3);
+            button_EasyLevel.Name = "button_EasyLevel";
+            button_EasyLevel.Size = new Size(502, 129);
+            button_EasyLevel.TabIndex = 14;
+            button_EasyLevel.Text = "Легкий";
+            button_EasyLevel.UseVisualStyleBackColor = false;
+            button_EasyLevel.Click += ChooseLevel;
+            // 
+            // button_MediumLevel
+            // 
+            button_MediumLevel.Anchor = AnchorStyles.None;
+            button_MediumLevel.BackColor = SystemColors.Highlight;
+            button_MediumLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
+            button_MediumLevel.FlatAppearance.BorderSize = 10;
+            button_MediumLevel.FlatAppearance.CheckedBackColor = Color.Teal;
+            button_MediumLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_MediumLevel.ForeColor = SystemColors.ButtonHighlight;
+            button_MediumLevel.Location = new Point(3, 138);
+            button_MediumLevel.Name = "button_MediumLevel";
+            button_MediumLevel.Size = new Size(502, 129);
+            button_MediumLevel.TabIndex = 13;
+            button_MediumLevel.Text = "Средний";
+            button_MediumLevel.UseVisualStyleBackColor = false;
+            button_MediumLevel.Click += ChooseLevel;
+            // 
+            // button_HardLevel
+            // 
+            button_HardLevel.Anchor = AnchorStyles.None;
+            button_HardLevel.BackColor = SystemColors.Highlight;
+            button_HardLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
+            button_HardLevel.FlatAppearance.BorderSize = 10;
+            button_HardLevel.FlatAppearance.CheckedBackColor = Color.Teal;
+            button_HardLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_HardLevel.ForeColor = SystemColors.ButtonHighlight;
+            button_HardLevel.Location = new Point(3, 273);
+            button_HardLevel.Name = "button_HardLevel";
+            button_HardLevel.Size = new Size(502, 129);
+            button_HardLevel.TabIndex = 12;
+            button_HardLevel.Text = "Сложный";
+            button_HardLevel.UseVisualStyleBackColor = false;
+            button_HardLevel.Click += ChooseLevel;
+            // 
+            // panel_CategoryButtons
+            // 
+            panel_CategoryButtons.Anchor = AnchorStyles.None;
+            panel_CategoryButtons.Controls.Add(panel_Category4);
+            panel_CategoryButtons.Controls.Add(panel_Category2);
+            panel_CategoryButtons.Controls.Add(panel_Category3);
+            panel_CategoryButtons.Controls.Add(panel_Category5);
+            panel_CategoryButtons.Controls.Add(panel_Category6);
+            panel_CategoryButtons.Controls.Add(panel_Category1);
+            panel_CategoryButtons.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            panel_CategoryButtons.ForeColor = Color.WhiteSmoke;
+            panel_CategoryButtons.Location = new Point(0, 301);
+            panel_CategoryButtons.Name = "panel_CategoryButtons";
+            panel_CategoryButtons.Size = new Size(1299, 743);
+            panel_CategoryButtons.TabIndex = 5;
+            panel_CategoryButtons.Visible = false;
+            // 
+            // panel_Category4
+            // 
+            panel_Category4.Anchor = AnchorStyles.None;
+            panel_Category4.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category4.Controls.Add(label_Category4);
+            panel_Category4.Controls.Add(button_Category4);
+            panel_Category4.Location = new Point(156, 391);
+            panel_Category4.Name = "panel_Category4";
+            panel_Category4.Size = new Size(221, 314);
+            panel_Category4.TabIndex = 2;
+            // 
+            // label_Category4
+            // 
+            label_Category4.Dock = DockStyle.Bottom;
+            label_Category4.Location = new Point(0, 200);
+            label_Category4.Name = "label_Category4";
+            label_Category4.Size = new Size(221, 114);
+            label_Category4.TabIndex = 5;
+            label_Category4.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category4
+            // 
+            button_Category4.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category4.Dock = DockStyle.Top;
+            button_Category4.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category4.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category4.FlatStyle = FlatStyle.Flat;
+            button_Category4.Location = new Point(0, 0);
+            button_Category4.Name = "button_Category4";
+            button_Category4.Size = new Size(221, 194);
+            button_Category4.TabIndex = 0;
+            button_Category4.UseVisualStyleBackColor = true;
+            button_Category4.Click += button_Category_Click;
+            // 
+            // panel_Category2
+            // 
+            panel_Category2.Anchor = AnchorStyles.None;
+            panel_Category2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category2.Controls.Add(label_Category2);
+            panel_Category2.Controls.Add(button_Category2);
+            panel_Category2.Location = new Point(552, 52);
+            panel_Category2.Name = "panel_Category2";
+            panel_Category2.Size = new Size(226, 289);
+            panel_Category2.TabIndex = 2;
+            // 
+            // label_Category2
+            // 
+            label_Category2.Dock = DockStyle.Bottom;
+            label_Category2.Location = new Point(0, 197);
+            label_Category2.Name = "label_Category2";
+            label_Category2.Size = new Size(226, 92);
+            label_Category2.TabIndex = 5;
+            label_Category2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category2
+            // 
+            button_Category2.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category2.Dock = DockStyle.Top;
+            button_Category2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category2.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category2.FlatStyle = FlatStyle.Flat;
+            button_Category2.ForeColor = Color.WhiteSmoke;
+            button_Category2.Location = new Point(0, 0);
+            button_Category2.Name = "button_Category2";
+            button_Category2.Size = new Size(226, 194);
+            button_Category2.TabIndex = 0;
+            button_Category2.UseVisualStyleBackColor = true;
+            button_Category2.Click += button_Category_Click;
+            // 
+            // panel_Category3
+            // 
+            panel_Category3.Anchor = AnchorStyles.None;
+            panel_Category3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category3.Controls.Add(label_Category3);
+            panel_Category3.Controls.Add(button_Category3);
+            panel_Category3.Location = new Point(928, 52);
+            panel_Category3.Name = "panel_Category3";
+            panel_Category3.Size = new Size(221, 289);
+            panel_Category3.TabIndex = 2;
+            // 
+            // label_Category3
+            // 
+            label_Category3.Dock = DockStyle.Bottom;
+            label_Category3.Location = new Point(0, 197);
+            label_Category3.Name = "label_Category3";
+            label_Category3.Size = new Size(221, 92);
+            label_Category3.TabIndex = 5;
+            label_Category3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category3
+            // 
+            button_Category3.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category3.Dock = DockStyle.Top;
+            button_Category3.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category3.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category3.FlatStyle = FlatStyle.Flat;
+            button_Category3.Location = new Point(0, 0);
+            button_Category3.Name = "button_Category3";
+            button_Category3.Size = new Size(221, 194);
+            button_Category3.TabIndex = 0;
+            button_Category3.UseVisualStyleBackColor = true;
+            button_Category3.Click += button_Category_Click;
+            // 
+            // panel_Category5
+            // 
+            panel_Category5.Anchor = AnchorStyles.None;
+            panel_Category5.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category5.Controls.Add(button_Category5);
+            panel_Category5.Controls.Add(label_Category5);
+            panel_Category5.Location = new Point(552, 391);
+            panel_Category5.Name = "panel_Category5";
+            panel_Category5.Size = new Size(226, 314);
+            panel_Category5.TabIndex = 2;
+            // 
+            // button_Category5
+            // 
+            button_Category5.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category5.Dock = DockStyle.Top;
+            button_Category5.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category5.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category5.FlatStyle = FlatStyle.Flat;
+            button_Category5.Location = new Point(0, 0);
+            button_Category5.Name = "button_Category5";
+            button_Category5.Size = new Size(226, 194);
+            button_Category5.TabIndex = 0;
+            button_Category5.UseVisualStyleBackColor = true;
+            button_Category5.Click += button_Category_Click;
+            // 
+            // label_Category5
+            // 
+            label_Category5.Dock = DockStyle.Bottom;
+            label_Category5.Location = new Point(0, 200);
+            label_Category5.Name = "label_Category5";
+            label_Category5.Size = new Size(226, 114);
+            label_Category5.TabIndex = 5;
+            label_Category5.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // panel_Category6
+            // 
+            panel_Category6.Anchor = AnchorStyles.None;
+            panel_Category6.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category6.Controls.Add(label_Category6);
+            panel_Category6.Controls.Add(button_Category6);
+            panel_Category6.Font = new Font("Segoe UI", 12F);
+            panel_Category6.ForeColor = Color.Black;
+            panel_Category6.Location = new Point(928, 391);
+            panel_Category6.Name = "panel_Category6";
+            panel_Category6.Size = new Size(227, 314);
+            panel_Category6.TabIndex = 2;
+            // 
+            // label_Category6
+            // 
+            label_Category6.Dock = DockStyle.Bottom;
+            label_Category6.ForeColor = Color.WhiteSmoke;
+            label_Category6.Location = new Point(0, 200);
+            label_Category6.Name = "label_Category6";
+            label_Category6.Size = new Size(227, 114);
+            label_Category6.TabIndex = 6;
+            label_Category6.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category6
+            // 
+            button_Category6.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category6.Dock = DockStyle.Top;
+            button_Category6.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category6.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category6.FlatStyle = FlatStyle.Flat;
+            button_Category6.ForeColor = Color.WhiteSmoke;
+            button_Category6.Location = new Point(0, 0);
+            button_Category6.Name = "button_Category6";
+            button_Category6.Size = new Size(227, 194);
+            button_Category6.TabIndex = 0;
+            button_Category6.UseVisualStyleBackColor = true;
+            button_Category6.Click += button_Category_Click;
+            // 
+            // panel_Category1
+            // 
+            panel_Category1.Anchor = AnchorStyles.None;
+            panel_Category1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category1.Controls.Add(label_Category1);
+            panel_Category1.Controls.Add(button_Category1);
+            panel_Category1.Location = new Point(156, 52);
+            panel_Category1.Name = "panel_Category1";
+            panel_Category1.Size = new Size(221, 314);
+            panel_Category1.TabIndex = 1;
+            // 
+            // label_Category1
+            // 
+            label_Category1.Dock = DockStyle.Bottom;
+            label_Category1.Location = new Point(0, 197);
+            label_Category1.Name = "label_Category1";
+            label_Category1.Size = new Size(221, 117);
+            label_Category1.TabIndex = 4;
+            label_Category1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category1
+            // 
+            button_Category1.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category1.Dock = DockStyle.Top;
+            button_Category1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category1.FlatStyle = FlatStyle.Flat;
+            button_Category1.ForeColor = Color.WhiteSmoke;
+            button_Category1.Location = new Point(0, 0);
+            button_Category1.Name = "button_Category1";
+            button_Category1.Size = new Size(221, 194);
+            button_Category1.TabIndex = 0;
+            button_Category1.UseVisualStyleBackColor = true;
+            button_Category1.Click += button_Category_Click;
             // 
             // panel_MenuButtons
             // 
@@ -261,6 +557,7 @@
             panel_MenuButtons.Controls.Add(button_PeopleHelp);
             panel_MenuButtons.Controls.Add(button_Info);
             panel_MenuButtons.Controls.Add(button_return);
+            panel_MenuButtons.Font = new Font("Segoe UI", 8F);
             panel_MenuButtons.Location = new Point(2, 1053);
             panel_MenuButtons.Name = "panel_MenuButtons";
             panel_MenuButtons.Size = new Size(1298, 172);
@@ -273,7 +570,7 @@
             button_50.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
             button_50.FlatAppearance.BorderSize = 10;
             button_50.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_50.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_50.Font = new Font("Segoe UI Semibold", 10.125F, FontStyle.Bold);
             button_50.ForeColor = SystemColors.ButtonHighlight;
             button_50.Location = new Point(260, 28);
             button_50.Name = "button_50";
@@ -290,7 +587,7 @@
             button_FriendHelp.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
             button_FriendHelp.FlatAppearance.BorderSize = 10;
             button_FriendHelp.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_FriendHelp.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_FriendHelp.Font = new Font("Segoe UI Semibold", 10.125F, FontStyle.Bold);
             button_FriendHelp.ForeColor = SystemColors.ButtonHighlight;
             button_FriendHelp.Location = new Point(779, 28);
             button_FriendHelp.Name = "button_FriendHelp";
@@ -307,7 +604,7 @@
             button_PeopleHelp.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
             button_PeopleHelp.FlatAppearance.BorderSize = 10;
             button_PeopleHelp.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_PeopleHelp.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_PeopleHelp.Font = new Font("Segoe UI Semibold", 10.125F, FontStyle.Bold);
             button_PeopleHelp.ForeColor = SystemColors.ButtonHighlight;
             button_PeopleHelp.Location = new Point(518, 28);
             button_PeopleHelp.Name = "button_PeopleHelp";
@@ -324,7 +621,7 @@
             button_Info.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
             button_Info.FlatAppearance.BorderSize = 10;
             button_Info.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_Info.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_Info.Font = new Font("Segoe UI Semibold", 10.125F, FontStyle.Bold);
             button_Info.ForeColor = SystemColors.ButtonHighlight;
             button_Info.Location = new Point(10, 28);
             button_Info.Name = "button_Info";
@@ -340,13 +637,13 @@
             button_return.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
             button_return.FlatAppearance.BorderSize = 10;
             button_return.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_return.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_return.Font = new Font("Segoe UI Semibold", 10.125F, FontStyle.Bold);
             button_return.ForeColor = SystemColors.ButtonHighlight;
             button_return.Location = new Point(1048, 28);
             button_return.Name = "button_return";
             button_return.Size = new Size(230, 111);
             button_return.TabIndex = 6;
-            button_return.Text = "Закончить игру";
+            button_return.Text = "Выход из приложения";
             button_return.UseVisualStyleBackColor = false;
             button_return.Click += button_return_Click;
             // 
@@ -365,7 +662,7 @@
             // 
             panel_Coins.Controls.Add(label_Coins);
             panel_Coins.Controls.Add(panel_CoinsImage);
-            panel_Coins.Location = new Point(951, 193);
+            panel_Coins.Location = new Point(1028, 193);
             panel_Coins.Name = "panel_Coins";
             panel_Coins.Size = new Size(260, 95);
             panel_Coins.TabIndex = 3;
@@ -396,7 +693,7 @@
             // 
             label_KnowlegeMatrix.BackColor = Color.Transparent;
             label_KnowlegeMatrix.Dock = DockStyle.Top;
-            label_KnowlegeMatrix.Font = new Font("Segoe UI Semibold", 44F, FontStyle.Bold);
+            label_KnowlegeMatrix.Font = new Font("Segoe UI Semibold", 40F, FontStyle.Bold);
             label_KnowlegeMatrix.ForeColor = Color.WhiteSmoke;
             label_KnowlegeMatrix.Location = new Point(0, 0);
             label_KnowlegeMatrix.Name = "label_KnowlegeMatrix";
@@ -409,235 +706,14 @@
             // 
             label_Quize.Anchor = AnchorStyles.Top;
             label_Quize.BackColor = Color.Transparent;
-            label_Quize.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
+            label_Quize.Font = new Font("Segoe UI Semibold", 17F, FontStyle.Bold);
             label_Quize.ForeColor = Color.WhiteSmoke;
-            label_Quize.Location = new Point(10, 193);
+            label_Quize.Location = new Point(10, 164);
             label_Quize.Name = "label_Quize";
-            label_Quize.Size = new Size(924, 95);
+            label_Quize.Size = new Size(965, 124);
             label_Quize.TabIndex = 1;
             label_Quize.Text = "Интеллектуальный квиз";
             label_Quize.TextAlign = ContentAlignment.TopRight;
-            // 
-            // panel_CategoryButtons
-            // 
-            panel_CategoryButtons.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel_CategoryButtons.Controls.Add(panel_Category4);
-            panel_CategoryButtons.Controls.Add(panel_Category2);
-            panel_CategoryButtons.Controls.Add(panel_Category3);
-            panel_CategoryButtons.Controls.Add(panel_Category5);
-            panel_CategoryButtons.Controls.Add(panel_Category6);
-            panel_CategoryButtons.Controls.Add(panel_Category1);
-            panel_CategoryButtons.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            panel_CategoryButtons.ForeColor = Color.WhiteSmoke;
-            panel_CategoryButtons.Location = new Point(0, 301);
-            panel_CategoryButtons.Name = "panel_CategoryButtons";
-            panel_CategoryButtons.Size = new Size(1299, 743);
-            panel_CategoryButtons.TabIndex = 5;
-            panel_CategoryButtons.Visible = false;
-            // 
-            // panel_Category4
-            // 
-            panel_Category4.Anchor = AnchorStyles.None;
-            panel_Category4.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category4.Controls.Add(label_Category4);
-            panel_Category4.Controls.Add(button_Category4);
-            panel_Category4.Location = new Point(156, 391);
-            panel_Category4.Name = "panel_Category4";
-            panel_Category4.Size = new Size(221, 269);
-            panel_Category4.TabIndex = 2;
-            // 
-            // label_Category4
-            // 
-            label_Category4.Dock = DockStyle.Bottom;
-            label_Category4.Location = new Point(0, 197);
-            label_Category4.Name = "label_Category4";
-            label_Category4.Size = new Size(221, 72);
-            label_Category4.TabIndex = 5;
-            label_Category4.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category4
-            // 
-            button_Category4.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category4.Dock = DockStyle.Top;
-            button_Category4.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category4.FlatStyle = FlatStyle.Flat;
-            button_Category4.Location = new Point(0, 0);
-            button_Category4.Name = "button_Category4";
-            button_Category4.Size = new Size(221, 194);
-            button_Category4.TabIndex = 0;
-            button_Category4.UseVisualStyleBackColor = true;
-            // 
-            // panel_Category2
-            // 
-            panel_Category2.Anchor = AnchorStyles.None;
-            panel_Category2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category2.Controls.Add(label_Category2);
-            panel_Category2.Controls.Add(button_Category2);
-            panel_Category2.Location = new Point(552, 52);
-            panel_Category2.Name = "panel_Category2";
-            panel_Category2.Size = new Size(226, 272);
-            panel_Category2.TabIndex = 2;
-            // 
-            // label_Category2
-            // 
-            label_Category2.Dock = DockStyle.Bottom;
-            label_Category2.Location = new Point(0, 201);
-            label_Category2.Name = "label_Category2";
-            label_Category2.Size = new Size(226, 71);
-            label_Category2.TabIndex = 5;
-            label_Category2.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category2
-            // 
-            button_Category2.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category2.Dock = DockStyle.Top;
-            button_Category2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category2.FlatStyle = FlatStyle.Flat;
-            button_Category2.ForeColor = Color.WhiteSmoke;
-            button_Category2.Location = new Point(0, 0);
-            button_Category2.Name = "button_Category2";
-            button_Category2.Size = new Size(226, 194);
-            button_Category2.TabIndex = 0;
-            button_Category2.UseVisualStyleBackColor = true;
-            // 
-            // panel_Category3
-            // 
-            panel_Category3.Anchor = AnchorStyles.None;
-            panel_Category3.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category3.Controls.Add(label_Category3);
-            panel_Category3.Controls.Add(button_Category3);
-            panel_Category3.Location = new Point(928, 52);
-            panel_Category3.Name = "panel_Category3";
-            panel_Category3.Size = new Size(221, 272);
-            panel_Category3.TabIndex = 2;
-            // 
-            // label_Category3
-            // 
-            label_Category3.Dock = DockStyle.Bottom;
-            label_Category3.Location = new Point(0, 201);
-            label_Category3.Name = "label_Category3";
-            label_Category3.Size = new Size(221, 71);
-            label_Category3.TabIndex = 5;
-            label_Category3.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category3
-            // 
-            button_Category3.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category3.Dock = DockStyle.Top;
-            button_Category3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category3.FlatStyle = FlatStyle.Flat;
-            button_Category3.Location = new Point(0, 0);
-            button_Category3.Name = "button_Category3";
-            button_Category3.Size = new Size(221, 194);
-            button_Category3.TabIndex = 0;
-            button_Category3.UseVisualStyleBackColor = true;
-            // 
-            // panel_Category5
-            // 
-            panel_Category5.Anchor = AnchorStyles.None;
-            panel_Category5.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category5.Controls.Add(button_Category5);
-            panel_Category5.Controls.Add(label_Category5);
-            panel_Category5.Location = new Point(552, 391);
-            panel_Category5.Name = "panel_Category5";
-            panel_Category5.Size = new Size(226, 269);
-            panel_Category5.TabIndex = 2;
-            // 
-            // button_Category5
-            // 
-            button_Category5.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category5.Dock = DockStyle.Top;
-            button_Category5.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category5.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category5.FlatStyle = FlatStyle.Flat;
-            button_Category5.Location = new Point(0, 0);
-            button_Category5.Name = "button_Category5";
-            button_Category5.Size = new Size(226, 194);
-            button_Category5.TabIndex = 0;
-            button_Category5.UseVisualStyleBackColor = true;
-            // 
-            // label_Category5
-            // 
-            label_Category5.Dock = DockStyle.Bottom;
-            label_Category5.Location = new Point(0, 200);
-            label_Category5.Name = "label_Category5";
-            label_Category5.Size = new Size(226, 69);
-            label_Category5.TabIndex = 5;
-            label_Category5.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // panel_Category6
-            // 
-            panel_Category6.Anchor = AnchorStyles.None;
-            panel_Category6.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category6.Controls.Add(label_Category6);
-            panel_Category6.Controls.Add(button_Category6);
-            panel_Category6.Font = new Font("Segoe UI", 12F);
-            panel_Category6.ForeColor = Color.Black;
-            panel_Category6.Location = new Point(928, 391);
-            panel_Category6.Name = "panel_Category6";
-            panel_Category6.Size = new Size(227, 269);
-            panel_Category6.TabIndex = 2;
-            // 
-            // label_Category6
-            // 
-            label_Category6.Dock = DockStyle.Bottom;
-            label_Category6.ForeColor = Color.WhiteSmoke;
-            label_Category6.Location = new Point(0, 200);
-            label_Category6.Name = "label_Category6";
-            label_Category6.Size = new Size(227, 69);
-            label_Category6.TabIndex = 6;
-            label_Category6.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category6
-            // 
-            button_Category6.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category6.Dock = DockStyle.Top;
-            button_Category6.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category6.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category6.FlatStyle = FlatStyle.Flat;
-            button_Category6.ForeColor = Color.WhiteSmoke;
-            button_Category6.Location = new Point(0, 0);
-            button_Category6.Name = "button_Category6";
-            button_Category6.Size = new Size(227, 194);
-            button_Category6.TabIndex = 0;
-            button_Category6.UseVisualStyleBackColor = true;
-            // 
-            // panel_Category1
-            // 
-            panel_Category1.Anchor = AnchorStyles.None;
-            panel_Category1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category1.Controls.Add(label_Category1);
-            panel_Category1.Controls.Add(button_Category1);
-            panel_Category1.Location = new Point(156, 52);
-            panel_Category1.Name = "panel_Category1";
-            panel_Category1.Size = new Size(221, 272);
-            panel_Category1.TabIndex = 1;
-            // 
-            // label_Category1
-            // 
-            label_Category1.Dock = DockStyle.Bottom;
-            label_Category1.Location = new Point(0, 201);
-            label_Category1.Name = "label_Category1";
-            label_Category1.Size = new Size(221, 71);
-            label_Category1.TabIndex = 4;
-            label_Category1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category1
-            // 
-            button_Category1.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category1.Dock = DockStyle.Top;
-            button_Category1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category1.FlatStyle = FlatStyle.Flat;
-            button_Category1.ForeColor = Color.WhiteSmoke;
-            button_Category1.Location = new Point(0, 0);
-            button_Category1.Name = "button_Category1";
-            button_Category1.Size = new Size(221, 194);
-            button_Category1.TabIndex = 0;
-            button_Category1.UseVisualStyleBackColor = true;
             // 
             // panel_StartGame
             // 
@@ -665,69 +741,6 @@
             button_Start.UseVisualStyleBackColor = false;
             button_Start.Click += button_Start_Click;
             // 
-            // flowLayoutPanel_DifficaltyLevel
-            // 
-            flowLayoutPanel_DifficaltyLevel.Anchor = AnchorStyles.None;
-            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_EasyLevel);
-            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_MediumLevel);
-            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_HardLevel);
-            flowLayoutPanel_DifficaltyLevel.Location = new Point(400, 400);
-            flowLayoutPanel_DifficaltyLevel.Name = "flowLayoutPanel_DifficaltyLevel";
-            flowLayoutPanel_DifficaltyLevel.Size = new Size(516, 422);
-            flowLayoutPanel_DifficaltyLevel.TabIndex = 3;
-            flowLayoutPanel_DifficaltyLevel.Visible = false;
-            // 
-            // button_EasyLevel
-            // 
-            button_EasyLevel.Anchor = AnchorStyles.None;
-            button_EasyLevel.BackColor = SystemColors.Highlight;
-            button_EasyLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
-            button_EasyLevel.FlatAppearance.BorderSize = 10;
-            button_EasyLevel.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_EasyLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
-            button_EasyLevel.ForeColor = SystemColors.ButtonHighlight;
-            button_EasyLevel.Location = new Point(3, 3);
-            button_EasyLevel.Name = "button_EasyLevel";
-            button_EasyLevel.Size = new Size(502, 129);
-            button_EasyLevel.TabIndex = 14;
-            button_EasyLevel.Text = "Легкий";
-            button_EasyLevel.UseVisualStyleBackColor = false;
-            button_EasyLevel.Visible = false;
-            // 
-            // button_MediumLevel
-            // 
-            button_MediumLevel.Anchor = AnchorStyles.None;
-            button_MediumLevel.BackColor = SystemColors.Highlight;
-            button_MediumLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
-            button_MediumLevel.FlatAppearance.BorderSize = 10;
-            button_MediumLevel.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_MediumLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
-            button_MediumLevel.ForeColor = SystemColors.ButtonHighlight;
-            button_MediumLevel.Location = new Point(3, 138);
-            button_MediumLevel.Name = "button_MediumLevel";
-            button_MediumLevel.Size = new Size(502, 129);
-            button_MediumLevel.TabIndex = 13;
-            button_MediumLevel.Text = "Средний";
-            button_MediumLevel.UseVisualStyleBackColor = false;
-            button_MediumLevel.Visible = false;
-            // 
-            // button_HardLevel
-            // 
-            button_HardLevel.Anchor = AnchorStyles.None;
-            button_HardLevel.BackColor = SystemColors.Highlight;
-            button_HardLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
-            button_HardLevel.FlatAppearance.BorderSize = 10;
-            button_HardLevel.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_HardLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
-            button_HardLevel.ForeColor = SystemColors.ButtonHighlight;
-            button_HardLevel.Location = new Point(3, 273);
-            button_HardLevel.Name = "button_HardLevel";
-            button_HardLevel.Size = new Size(502, 129);
-            button_HardLevel.TabIndex = 12;
-            button_HardLevel.Text = "Сложный";
-            button_HardLevel.UseVisualStyleBackColor = false;
-            button_HardLevel.Visible = false;
-            // 
             // button_StartGame
             // 
             button_StartGame.Location = new Point(0, 0);
@@ -747,9 +760,7 @@
             panel_Main.ResumeLayout(false);
             panel_Question.ResumeLayout(false);
             panel_YourLevel.ResumeLayout(false);
-            panel_MenuButtons.ResumeLayout(false);
-            panel_Title.ResumeLayout(false);
-            panel_Coins.ResumeLayout(false);
+            flowLayoutPanel_DifficaltyLevel.ResumeLayout(false);
             panel_CategoryButtons.ResumeLayout(false);
             panel_Category4.ResumeLayout(false);
             panel_Category2.ResumeLayout(false);
@@ -757,8 +768,10 @@
             panel_Category5.ResumeLayout(false);
             panel_Category6.ResumeLayout(false);
             panel_Category1.ResumeLayout(false);
+            panel_MenuButtons.ResumeLayout(false);
+            panel_Title.ResumeLayout(false);
+            panel_Coins.ResumeLayout(false);
             panel_StartGame.ResumeLayout(false);
-            flowLayoutPanel_DifficaltyLevel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -807,11 +820,11 @@
         private Panel panel_YourLevel;
         private Label label_YourLevel;
         private Panel panel_LevelIcon;
-        private Label label_YourDifLevel;
+        private Label label_NumberOfQuestion;
         private Label label_AskingQuestion;
         private Button button_Answer1;
         private Label label_Hints;
-        private Button button_3;
+        private Button button_Answer3;
         private Button button_Answer2;
         private Button button_Answer4;
     }
