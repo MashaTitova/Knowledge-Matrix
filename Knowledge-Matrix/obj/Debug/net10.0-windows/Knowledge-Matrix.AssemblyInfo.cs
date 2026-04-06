@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Knowledge-Matrix")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d24d620d50f58c299e57c606ed97f536ed3af35e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5786f6f2024a7897debc358208733c29f1014bac")]
 [assembly: System.Reflection.AssemblyProductAttribute("Knowledge-Matrix")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Knowledge-Matrix")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -11,8 +11,7 @@ namespace Knowledge_Matrix
         static Dictionary<string, string> iconsDictionary = new Dictionary<string, string>();
         static List <String> choisenCategories = new List<String>();
         static List<Question> choisenQuestions = new List<Question>();
-        private List<Question> currentQuestions; 
-        private int currentQuestionIndex = 0;
+        private List<Question> currentQuestions = new List<Question>(); 
         private int money = 0;
         private Dictionary<string, HashSet<string>> completedCategoriesLevels =
     new Dictionary<string, HashSet<string>>();
@@ -76,7 +75,6 @@ namespace Knowledge_Matrix
                 label_Quize.Text = "Выберите уровень сложности";
                 button_return.Text = "Вернуться к категориям";
             }
-            currentQuestionIndex = 0;
         }
         private void SetCategoryIcons()
         {
@@ -146,7 +144,15 @@ namespace Knowledge_Matrix
                   MessageBoxButtons.YesNo,
                   MessageBoxIcon.Question
                );
+                choisenCategories.Clear();
+                choisenQuestions.Clear(); ;
+                currentQuestions.Clear();
+                label_Coins.Text = "0";
                 SetCategoryIcons();
+                button_Answer1.Enabled = true;
+                button_Answer2.Enabled = true;
+                button_Answer3.Enabled = true;
+                button_Answer4.Enabled = true;
                 panel_StartGame.Visible = false;
                 panel_Coins.Visible = true;
                 label_Quize.Text = "Задача: ответить на вопросы всех категорий";
@@ -193,30 +199,55 @@ namespace Knowledge_Matrix
             string level = label_Quize.Text.Replace("Уровень: ", "");
 
             // Фильтруем вопросы
-            currentQuestions = choisenQuestions
+            var currentQuestionsAll = choisenQuestions
                 .Where(p => p.Category == category)
                 .Where(p => p.Difficulty == level)
                 .ToList();
-
+            currentQuestions.AddRange(currentQuestionsAll.Take(5));
 
             // Показываем первый вопрос
             ShowNextQuestion();
         }
+        private string FindLabelNameByText(string targetText)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is System.Windows.Forms.Label label && label.Text == targetText)
+                {
+                    return label.Name;
+                }
+            }
+            return null; 
+        }
+
 
         private void ShowNextQuestion()
         {
             
-            if (currentQuestionIndex >= currentQuestions.Count)
+            if (currentQuestions.Count() <= 0)
             {
                 string category = label_KnowlegeMatrix.Text.Replace("Категория: ", "");
                 string level = label_Quize.Text.Replace("Уровень: ", "");
-                currentQuestionIndex = 0;
                 // Добавляем уровень в список пройденных для данной категории
                 if (!completedCategoriesLevels.ContainsKey(category))
                 {
                     completedCategoriesLevels.Add(category, new HashSet<string>());
                 }
                 completedCategoriesLevels[category].Add(level);
+                //if (completedCategoriesLevels[category].Count == 3)
+                //{
+                //    string labelName = FindLabelNameByText(category);
+                //    string buttonName = labelName.Replace("label_","button_");
+                //    foreach (Control control in this.Controls)
+                //    {
+                //        if (control is System.Windows.Forms.Button button && button.Name == buttonName)
+                //        {
+                //            button.Enabled = false;
+                //        }
+                //    }
+
+                //}
+                currentQuestions.Clear();
                 panel_Question.Visible = false;
                 MessageBox.Show(
                    "Все вопросы данной категории и данного уровня сложности пройдены",
@@ -234,7 +265,7 @@ namespace Knowledge_Matrix
 
             }
 
-            Question question = currentQuestions[currentQuestionIndex];
+            Question question = currentQuestions[currentQuestions.Count - 1];
             label_AskingQuestion.Text = question.QuestionText;
 
             // Перемешиваем ответы
@@ -247,8 +278,9 @@ namespace Knowledge_Matrix
             button_Answer4.Text = question.Answers[answers[3]]; 
 
             // Обновляем индикаторы прогресса
-            label_YourLevel.Text = $"{currentQuestionIndex + 1}/{5}";
-            label_NumberOfQuestion.Text = $"Вопрос {currentQuestionIndex + 1}";
+            label_YourLevel.Text = $"{Math.Abs(6 - currentQuestions.Count())}/{5}";
+            label_NumberOfQuestion.Text = $"Вопрос {Math.Abs(6 - currentQuestions.Count())}";
+            currentQuestions.Remove(question);
         }
         private void UpdateDifficultyButtons()
         {
@@ -266,19 +298,7 @@ namespace Knowledge_Matrix
                         button.Enabled = false; 
                         button.BackColor = Color.Gray; 
                     }
-                    else
-                    {
-                        button.Enabled = true;
-                        button.BackColor = SystemColors.Control; 
-                    }
-                    if (completedCategoriesLevels[currentCategory].Count == 3)
-                    {
-                        button.Enabled = false;
-                    }
-                    else
-                    {
-                        button.Enabled = true;
-                    }
+
                 }
             }
         }
@@ -356,6 +376,7 @@ namespace Knowledge_Matrix
             label_Coins.Text = Convert.ToString(money);
             if (money < 0)
             {
+               
                 MessageBox.Show(
                    "У вас больше нет монеточек :( \n" +
                    $"Вы проиграли",
@@ -379,6 +400,7 @@ namespace Knowledge_Matrix
                );
                 if (result == DialogResult.Yes)
                 {
+                    
                     button_50.Visible = false;
                     button_PeopleHelp.Visible = false;
                     button_FriendHelp.Visible = false;
@@ -388,7 +410,6 @@ namespace Knowledge_Matrix
                     panel_Coins.Visible = false;
                     label_Quize.Text = "Интеллектуальный квиз";
                     label_KnowlegeMatrix.Text = "Матрица Знаний";
-                    currentQuestionIndex = 0;
 
                 }
                 else
@@ -401,8 +422,7 @@ namespace Knowledge_Matrix
                     Application.Exit();
                 }
             }
-            
-            currentQuestionIndex++;
+           
             ShowNextQuestion();
         }
     }
