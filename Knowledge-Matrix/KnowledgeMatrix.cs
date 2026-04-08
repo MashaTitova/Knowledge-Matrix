@@ -1,5 +1,6 @@
 using GetQuestions;
 using System.Reflection.Emit;
+using System.Reflection.Metadata;
 using System.Windows.Forms.VisualStyles;
 using UsefullClassLibrary;
 
@@ -9,13 +10,17 @@ namespace Knowledge_Matrix
     {
         static HashSet<Question> uniqueQuestions = new HashSet<Question>();
         static Dictionary<string, string> iconsDictionary = new Dictionary<string, string>();
-        static List <String> choisenCategories = new List<String>();
+        static List<String> choisenCategories = new List<String>();
         static List<Question> choisenQuestions = new List<Question>();
-        private List<Question> currentQuestions = new List<Question>(); 
+        private List<Question> currentQuestionsMix = new List<Question>();
+        private List<Question> currentQuestions = new List<Question>();
         private int money = 0;
         private Dictionary<string, HashSet<string>> completedCategoriesLevels =
     new Dictionary<string, HashSet<string>>();
-        public  Form_KnowledgeMatrix()
+        private string currentCategory = "";
+        private string currentLevel = "";
+        int constantLenght = 0;
+        public Form_KnowledgeMatrix()
         {
             InitializeComponent();
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -45,7 +50,7 @@ namespace Knowledge_Matrix
                   MessageBoxButtons.YesNo,
                   MessageBoxIcon.Question
                );
-                if(result == DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     money = 0;
                     panel_StartGame.Visible = true;
@@ -55,7 +60,7 @@ namespace Knowledge_Matrix
                     panel_CategoryButtons.Visible = false;
                     button_return.Text = "Выход из приложения";
                 }
-                
+
             }
             if (button_return.Text == "Вернуться к категориям")
             {
@@ -65,7 +70,7 @@ namespace Knowledge_Matrix
                 button_return.Text = "Закончить игру";
                 flowLayoutPanel_DifficaltyLevel.Visible = false;
             }
-            if(button_return.Text == "Вернуться к уровням сложности")
+            if (button_return.Text == "Вернуться к уровням сложности")
             {
                 flowLayoutPanel_DifficaltyLevel.Visible = true;
                 button_50.Visible = false;
@@ -87,50 +92,113 @@ namespace Knowledge_Matrix
 
             label_Category1.Text = iconsDictionary.Keys.ElementAt(choisen[0]);
             button_Category1.BackgroundImage = Image.FromFile($".\\Icons\\{iconsDictionary.Values.ElementAt(choisen[0])}");
+            button_Category1.Name = iconsDictionary.Keys.ElementAt(choisen[0]);
 
             label_Category2.Text = iconsDictionary.Keys.ElementAt(choisen[1]);
             button_Category2.BackgroundImage = Image.FromFile($".\\Icons\\{iconsDictionary.Values.ElementAt(choisen[1])}");
+            button_Category2.Name = iconsDictionary.Keys.ElementAt(choisen[1]);
 
             label_Category3.Text = iconsDictionary.Keys.ElementAt(choisen[2]);
             button_Category3.BackgroundImage = Image.FromFile($".\\Icons\\{iconsDictionary.Values.ElementAt(choisen[2])}");
+            button_Category3.Name = iconsDictionary.Keys.ElementAt(choisen[2]);
 
             label_Category4.Text = iconsDictionary.Keys.ElementAt(choisen[3]);
             button_Category4.BackgroundImage = Image.FromFile($".\\Icons\\{iconsDictionary.Values.ElementAt(choisen[3])}");
+            button_Category4.Name = iconsDictionary.Keys.ElementAt(choisen[3]);
 
             label_Category5.Text = iconsDictionary.Keys.ElementAt(choisen[4]);
             button_Category5.BackgroundImage = Image.FromFile($".\\Icons\\{iconsDictionary.Values.ElementAt(choisen[4])}");
+            button_Category5.Name = iconsDictionary.Keys.ElementAt(choisen[4]);
 
             label_Category6.Text = iconsDictionary.Keys.ElementAt(choisen[5]);
             button_Category6.BackgroundImage = Image.FromFile($".\\Icons\\{iconsDictionary.Values.ElementAt(choisen[5])}");
+            button_Category6.Name = iconsDictionary.Keys.ElementAt(choisen[5]);
         }
         private void FillData()
         {
+            try
+            {
+                ReadFile.CheckFile(".\\Data\\Icons.csv");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                        $"{ex.Message}",
+                        "Ошибка",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                button_Start.Enabled = false;
+            }
             StreamReader g = new StreamReader(".\\Data\\Icons.csv");
             g.ReadLine();
             for (int i = 0; i < File.ReadAllLines(".\\Data\\Icons.csv").Length - 1; i++)
             {
-                string[] categoryAndIcon = Convert.ToString(g.ReadLine()).Split(";");
-                iconsDictionary.Add(categoryAndIcon[0], categoryAndIcon[1]);
-            }
+                try
+                {
+                    string[] categoryAndIcon = Convert.ToString(g.ReadLine()).Split(";");
+                    iconsDictionary.Add(categoryAndIcon[0], categoryAndIcon[1]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(
+                      "Ошибка в файле Icons" +
+                      $"Строка {i + 2}",
+                      "Ошибка",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error);
+                    button_Start.Enabled = false;
+                }
 
+            }
+            try
+            {
+                ReadFile.CheckFile(".\\Data\\ListOfQuestions.csv");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                        $"{ex.Message}",
+                        "Ошибка",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                button_Start.Enabled = false;
+            }
             StreamReader f = new StreamReader(".\\Data\\ListOfQuestions.csv");
             f.ReadLine();
 
 
             for (int i = 0; i < File.ReadAllLines(".\\Data\\ListOfQuestions.csv").Length - 1; i++)
             {
-                string s = Convert.ToString(f.ReadLine());
-                string[] parts = s.Split(';');
-                string answersStr = parts[3].Trim('[', ']');
-                string[] answerParts = answersStr.Split(',');
-                List<string> answers = answerParts.ToList();
+                try
+                {
+                    string s = Convert.ToString(f.ReadLine());
+                    string[] parts = s.Split(';');
+                    string answersStr = parts[3].Trim('[', ']');
+                    string[] answerParts = answersStr.Split(',');
+                    List<string> answers = answerParts.ToList();
+                    Question q = new Question(
+                        category: parts[0],
+                        difficulty: parts[1],
+                        questionText: parts[2],
+                        answers: answers);
+                    if (!uniqueQuestions.Any(existingQ => existingQ.QuestionText == q.QuestionText))
+                    {
+                        uniqueQuestions.Add(q);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show(
+                      "Ошибка в файле ListOfQuestions" +
+                      $"Строка {i + 2}",
+                      "Ошибка",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error);
+                    button_Start.Enabled = false;
+                }
 
-                Question q = new Question(
-                category: parts[0],
-                difficulty: parts[1],
-                questionText: parts[2],
-                answers: answers);
-                uniqueQuestions.Add(q);
+
+
             }
         }
         private void button_Start_Click(object sender, EventArgs e)
@@ -144,8 +212,10 @@ namespace Knowledge_Matrix
                   MessageBoxButtons.YesNo,
                   MessageBoxIcon.Question
                );
+                completedCategoriesLevels.Clear();
                 choisenCategories.Clear();
                 choisenQuestions.Clear(); ;
+                currentQuestionsMix.Clear();
                 currentQuestions.Clear();
                 label_Coins.Text = "0";
                 SetCategoryIcons();
@@ -159,94 +229,112 @@ namespace Knowledge_Matrix
                 label_KnowlegeMatrix.Text = "Выберите категорию";
                 panel_CategoryButtons.Visible = true;
                 button_return.Text = "Закончить игру";
-
+                foreach (Control ctrl in panel_CategoryButtons.Controls)
+                {
+                    if (ctrl is Button button)
+                    {
+                        button.Enabled = true;
+                    }
+                }
+                foreach (Control ctrl in flowLayoutPanel_DifficaltyLevel.Controls)
+                {
+                    if (ctrl is Button button)
+                    {
+                        button.Enabled = true;
+                    }
+                }
             }
         }
-        private  void button_Category_Click(object sender, EventArgs e)
+        private void button_Category_Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             string labelName = button.Name.Replace("button_", "label_");
-            Control[] foundControls = this.Controls.Find(labelName, true);
-            string targetCategory = "";
-            if (foundControls.Length > 0 && foundControls[0] is System.Windows.Forms.Label targetLabel)
-            {
-                targetCategory = targetLabel.Text;
-            }
+            label_KnowlegeMatrix.Text = $"Категория: {button.Name}";
             panel_CategoryButtons.Visible = false;
             label_Quize.Text = "Выберите уровень сложности";
-            label_KnowlegeMatrix.Text = $"Категория: {targetCategory}";
             flowLayoutPanel_DifficaltyLevel.Visible = true;
             button_return.Text = "Вернуться к категориям";
-            
+            if (button.Name != currentCategory)
+            {
+                foreach (Control ctrl in flowLayoutPanel_DifficaltyLevel.Controls)
+                {
+                    if (ctrl is Button but)
+                    {
+                        but.Enabled = true;
+                    }
+                }
+            }
 
 
         }
-        private void ChooseLevel (object sender, EventArgs e)
+        private void ChooseLevel(object sender, EventArgs e)
         {
             var button = (Button)sender;
+            currentQuestionsMix.Clear();
+            currentQuestions.Clear();
             button_50.Visible = true;
             button_PeopleHelp.Visible = true;
             button_FriendHelp.Visible = true;
             flowLayoutPanel_DifficaltyLevel.Visible = false;
             panel_Question.Visible = true;
-            label_Quize.Text =  $"Уровень: {button.Text}";
+            label_Quize.Text = $"Уровень: {button.Text}";
             button_return.Text = "Вернуться к уровням сложности";
+            currentCategory = label_KnowlegeMatrix.Text.Replace("Категория: ", "");
+
             SetQuestions();
         }
         private void SetQuestions()
         {
-            string category = label_KnowlegeMatrix.Text.Replace("Категория: ", "");
-            string level = label_Quize.Text.Replace("Уровень: ", "");
-
+            currentLevel = label_Quize.Text.Replace("Уровень: ", "");
+            constantLenght = 0;
             // Фильтруем вопросы
-            var currentQuestionsAll = choisenQuestions
-                .Where(p => p.Category == category)
-                .Where(p => p.Difficulty == level)
+            currentQuestions = choisenQuestions
+                .Where(p => p.Category == currentCategory)
+                .Where(p => p.Difficulty == currentLevel)
                 .ToList();
-            currentQuestions.AddRange(currentQuestionsAll.Take(5));
+            constantLenght = currentQuestions.Count();
 
             // Показываем первый вопрос
             ShowNextQuestion();
-        }
-        private string FindLabelNameByText(string targetText)
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is System.Windows.Forms.Label label && label.Text == targetText)
-                {
-                    return label.Name;
-                }
-            }
-            return null; 
         }
 
 
         private void ShowNextQuestion()
         {
-            
             if (currentQuestions.Count() <= 0)
             {
-                string category = label_KnowlegeMatrix.Text.Replace("Категория: ", "");
-                string level = label_Quize.Text.Replace("Уровень: ", "");
-                // Добавляем уровень в список пройденных для данной категории
-                if (!completedCategoriesLevels.ContainsKey(category))
-                {
-                    completedCategoriesLevels.Add(category, new HashSet<string>());
-                }
-                completedCategoriesLevels[category].Add(level);
-                //if (completedCategoriesLevels[category].Count == 3)
-                //{
-                //    string labelName = FindLabelNameByText(category);
-                //    string buttonName = labelName.Replace("label_","button_");
-                //    foreach (Control control in this.Controls)
-                //    {
-                //        if (control is System.Windows.Forms.Button button && button.Name == buttonName)
-                //        {
-                //            button.Enabled = false;
-                //        }
-                //    }
 
-                //}
+                // Добавляем уровень в список пройденных для данной категории
+                if (!completedCategoriesLevels.ContainsKey(currentCategory))
+                {
+                    completedCategoriesLevels.Add(currentCategory, new HashSet<string>());
+                }
+                completedCategoriesLevels[currentCategory].Add(currentLevel);
+                UpdateDifficultyButtons();
+                if (completedCategoriesLevels[currentCategory].Count == 3)
+                {
+
+                    label_Quize.Text = "Задача: ответить на все вопросы всех категорий";
+                    label_KnowlegeMatrix.Text = "Выберите категорию";
+                    button_return.Text = "Закончить игру";
+                    panel_CategoryButtons.Visible = true;
+                    panel_Question.Visible = false;
+                    foreach (Control ctrl in panel_CategoryButtons.Controls)
+                    {
+                        if (ctrl is Button button)
+                        {
+                            string category = button.Name;
+
+                            if (category == currentCategory)
+                            {
+                                button.Enabled = false;
+                            }
+
+                        }
+                    }
+
+                }
+                currentQuestionsMix.Clear();
                 currentQuestions.Clear();
                 panel_Question.Visible = false;
                 MessageBox.Show(
@@ -264,39 +352,51 @@ namespace Knowledge_Matrix
                 return;
 
             }
-
-            Question question = currentQuestions[currentQuestions.Count - 1];
+            List<int> mix = Randomazer.CastomRandom(currentQuestions.Count, currentQuestions.Count);
+            for (int i = 0; i < mix.Count; i++)
+            {
+                currentQuestionsMix.Add(currentQuestions[mix[i]]);
+            }
+            Question question = currentQuestionsMix[currentQuestionsMix.Count - 1];
             label_AskingQuestion.Text = question.QuestionText;
 
             // Перемешиваем ответы
             List<int> answers = Randomazer.CastomRandom(4, question.Answers.Count);
-
             // Обновляем текст кнопок
             button_Answer1.Text = question.Answers[answers[0]];
             button_Answer2.Text = question.Answers[answers[1]];
             button_Answer3.Text = question.Answers[answers[2]];
-            button_Answer4.Text = question.Answers[answers[3]]; 
+            button_Answer4.Text = question.Answers[answers[3]];
+
+            foreach (Control ctrl in panel_Question.Controls)
+            {
+                if (ctrl is Button button)
+                {
+                    button.Enabled = true;
+                    button.Visible = true;
+                }
+            }
+            button_50.Enabled = true;
+            button_PeopleHelp.Enabled = true;
 
             // Обновляем индикаторы прогресса
-            label_YourLevel.Text = $"{Math.Abs(6 - currentQuestions.Count())}/{5}";
-            label_NumberOfQuestion.Text = $"Вопрос {Math.Abs(6 - currentQuestions.Count())}";
-            currentQuestions.Remove(question);
+            label_YourLevel.Text = $"{Math.Abs(constantLenght + 1 - currentQuestionsMix.Count())}/{constantLenght}";
+            label_NumberOfQuestion.Text = $"Вопрос {Math.Abs(constantLenght + 1 - currentQuestionsMix.Count())}";
+            currentQuestionsMix.Remove(question);
         }
         private void UpdateDifficultyButtons()
         {
-            string currentCategory = label_KnowlegeMatrix.Text.Replace("Категория: ", "");
 
             foreach (Control ctrl in flowLayoutPanel_DifficaltyLevel.Controls)
             {
                 if (ctrl is Button button)
                 {
-                    string level = button.Text; 
+                    string level = button.Text;
 
                     if (completedCategoriesLevels.ContainsKey(currentCategory) &&
                         completedCategoriesLevels[currentCategory].Contains(level))
                     {
-                        button.Enabled = false; 
-                        button.BackColor = Color.Gray; 
+                        button.Enabled = false;
                     }
 
                 }
@@ -305,7 +405,7 @@ namespace Knowledge_Matrix
 
         private void button_Answer1_Click(object sender, EventArgs e)
         {
-            ProcessAnswer(button_Answer1.Text); 
+            ProcessAnswer(button_Answer1.Text);
         }
 
         private void button_Answer2_Click(object sender, EventArgs e)
@@ -359,11 +459,11 @@ namespace Knowledge_Matrix
                 }
                 if (currentQuestion[0].Difficulty == "Средний")
                 {
-                    earned = -15;
+                    earned = -20;
                 }
                 if (currentQuestion[0].Difficulty == "Сложный")
                 {
-                    earned = -25;
+                    earned = -35;
                 }
                 money += earned;
                 MessageBox.Show(
@@ -376,55 +476,168 @@ namespace Knowledge_Matrix
             label_Coins.Text = Convert.ToString(money);
             if (money < 0)
             {
-               
-                MessageBox.Show(
-                   "У вас больше нет монеточек :( \n" +
-                   $"Вы проиграли",
-                   "Проигрыш",
-                   MessageBoxButtons.OK,
-                   MessageBoxIcon.Asterisk);
-                label_AskingQuestion.Text = "Продолжение невозможно";
-                button_Answer1.Text = "";
-                button_Answer2.Text = "";
-                button_Answer3.Text = "";
-                button_Answer4.Text = "";
-                button_Answer1.Enabled = false;
-                button_Answer2.Enabled = false;
-                button_Answer3.Enabled = false;
-                button_Answer4.Enabled = false;
-                DialogResult result = MessageBox.Show(
-                  "Начать новую игру?",
-                  "Новая игра",
-                  MessageBoxButtons.YesNo,
-                  MessageBoxIcon.Question
-               );
-                if (result == DialogResult.Yes)
-                {
-                    
-                    button_50.Visible = false;
-                    button_PeopleHelp.Visible = false;
-                    button_FriendHelp.Visible = false;
-                    panel_Question.Visible = false;
-                    money = 0;
-                    panel_StartGame.Visible = true;
-                    panel_Coins.Visible = false;
-                    label_Quize.Text = "Интеллектуальный квиз";
-                    label_KnowlegeMatrix.Text = "Матрица Знаний";
+                MoneyLess();
 
-                }
-                else
-                {
-                    MessageBox.Show(
-                   "До новых встреч",
-                   "Выход из игры",
-                   MessageBoxButtons.OK,
-                   MessageBoxIcon.None);
-                    Application.Exit();
-                }
             }
-           
+
             ShowNextQuestion();
         }
+        private void MoneyLess()
+        {
+            MessageBox.Show(
+                  "У вас больше нет монеточек :( \n" +
+                  $"Вы проиграли",
+                  "Проигрыш",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Asterisk);
+            label_AskingQuestion.Text = "Продолжение невозможно";
+            button_Answer1.Text = "";
+            button_Answer2.Text = "";
+            button_Answer3.Text = "";
+            button_Answer4.Text = "";
+            button_Answer1.Enabled = false;
+            button_Answer2.Enabled = false;
+            button_Answer3.Enabled = false;
+            button_Answer4.Enabled = false;
+            DialogResult result = MessageBox.Show(
+              "Начать новую игру?",
+              "Новая игра",
+              MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question
+           );
+            if (result == DialogResult.Yes)
+            {
+
+                button_50.Visible = false;
+                button_PeopleHelp.Visible = false;
+                button_FriendHelp.Visible = false;
+                panel_Question.Visible = false;
+                money = 0;
+                panel_StartGame.Visible = true;
+                panel_Coins.Visible = false;
+                label_Quize.Text = "Интеллектуальный квиз";
+                label_KnowlegeMatrix.Text = "Матрица Знаний";
+
+            }
+            else
+            {
+                MessageBox.Show(
+               "До новых встреч",
+               "Выход из игры",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.None);
+                Application.Exit();
+            }
+        }
+
+        private void button_50_Click(object sender, EventArgs e)
+        {
+            // Списываем 30 монет за использование подсказки
+            button_50.Enabled = false;
+            money -= 30;
+            label_Coins.Text = money.ToString();
+            if (money < 0)
+            {
+                MoneyLess();
+                return; // Прерываем выполнение, если денег недостаточно
+            }
+
+            // Получаем текст текущего вопроса с экрана
+            string currentQuestionText = label_AskingQuestion.Text;
+
+            // Ищем вопрос среди всех уникальных вопросов
+            Question currentQuestion = uniqueQuestions
+                .FirstOrDefault(q => q.QuestionText == currentQuestionText);
+
+            // Если вопрос не найден, выходим
+            if (currentQuestion == null)
+            {
+                MessageBox.Show(
+                    "Текущий вопрос не найден в базе данных!",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
+
+            string correctAnswer = currentQuestion.Answers[0];
+
+            // Собираем список кнопок с неправильными ответами
+            List<Button> wrongAnswerButtons = new List<Button>();
+            foreach (Control ctrl in panel_Question.Controls)
+            {
+                if (ctrl is Button button && button.Name.StartsWith("button_Answer"))
+                {
+                    if (button.Text != correctAnswer)
+                    {
+                        wrongAnswerButtons.Add(button);
+                    }
+                }
+            }
+
+            // Проверяем, достаточно ли неправильных ответов для скрытия
+            if (wrongAnswerButtons.Count < 2)
+            {
+
+                return;
+            }
+
+            // Выбираем 2 случайные кнопки с неправильными ответами
+            Random random = new Random();
+            int firstIndex = random.Next(wrongAnswerButtons.Count);
+            Button firstButton = wrongAnswerButtons[firstIndex];
+
+            int secondIndex;
+            do
+            {
+                secondIndex = random.Next(wrongAnswerButtons.Count);
+            } while (secondIndex == firstIndex);
+            Button secondButton = wrongAnswerButtons[secondIndex];
+
+            // Скрываем выбранные кнопки (делаем невидимыми и недоступными)
+            firstButton.Visible = false;
+            secondButton.Visible = false;
+        }
+
+        private void button_PeopleHelp_Click(object sender, EventArgs e)
+        {
+            int choisenAnswer = Randomazer.OtherOpinionGenerator();
+            button_PeopleHelp.Enabled = false;
+            money -= 30;
+            label_Coins.Text = money.ToString();
+            if (money < 0)
+            {
+                MoneyLess();
+                return; 
+            }
+
+            string currentQuestionText = label_AskingQuestion.Text;
+
+            Question currentQuestion = uniqueQuestions
+                .FirstOrDefault(q => q.QuestionText == currentQuestionText);
+
+            if (currentQuestion == null)
+            {
+                MessageBox.Show(
+                    "Текущий вопрос не найден в базе данных!",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
+            Form_PeopleHelp form = new Form_PeopleHelp();
+            form.Show();
+            List <string> Answers = currentQuestion.Answers;
+            List<int> ans = Randomazer.CastomRandom(4, 4);
+            form.textBox_CTextChange(Answers[choisenAnswer]);
+            ans.Remove(choisenAnswer);
+            form.textBox_ATextChange(Answers[ans[0]]);
+            form.textBox_BTextChange(Answers[ans[1]]);
+            form.textBox_DTextChange(Answers[ans[2]]);
+        }
+
     }
 }
  

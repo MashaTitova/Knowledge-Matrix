@@ -21,5 +21,12 @@ namespace GetQuestions
             }
             return choisen;
         }
+        public static int OtherOpinionGenerator()
+        {
+            int[] probability = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3];
+            int trueAnswer = probability[random.Next(probability.Length)];
+            return trueAnswer;
+        }
     }
+    
 }

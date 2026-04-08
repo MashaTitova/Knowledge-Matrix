@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GetQuestions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e5d0b50ec6d63154ce2c22bd0e4760b697bc396")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3647878a8d2a7608a1ff54a1aed2affeb60a52d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("GetQuestions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GetQuestions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

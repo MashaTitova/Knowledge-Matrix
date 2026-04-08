@@ -25,7 +25,7 @@
                     var filteredQuestions = questions
                         .Where(q => q.Category == category && q.Difficulty == level)
                         .ToList();
-                    sortedQuestions.AddRange(filteredQuestions.GetRange(0, 5));
+                    sortedQuestions.AddRange(filteredQuestions);
                 }
             }
             return sortedQuestions;

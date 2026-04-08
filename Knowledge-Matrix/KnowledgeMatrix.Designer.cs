@@ -41,10 +41,6 @@
             panel_LevelIcon = new Panel();
             label_NumberOfQuestion = new Label();
             label_AskingQuestion = new Label();
-            flowLayoutPanel_DifficaltyLevel = new FlowLayoutPanel();
-            button_EasyLevel = new Button();
-            button_MediumLevel = new Button();
-            button_HardLevel = new Button();
             panel_CategoryButtons = new Panel();
             panel_Category4 = new Panel();
             label_Category4 = new Label();
@@ -64,6 +60,10 @@
             panel_Category1 = new Panel();
             label_Category1 = new Label();
             button_Category1 = new Button();
+            flowLayoutPanel_DifficaltyLevel = new FlowLayoutPanel();
+            button_EasyLevel = new Button();
+            button_MediumLevel = new Button();
+            button_HardLevel = new Button();
             panel_MenuButtons = new Panel();
             button_50 = new Button();
             button_FriendHelp = new Button();
@@ -82,7 +82,6 @@
             panel_Main.SuspendLayout();
             panel_Question.SuspendLayout();
             panel_YourLevel.SuspendLayout();
-            flowLayoutPanel_DifficaltyLevel.SuspendLayout();
             panel_CategoryButtons.SuspendLayout();
             panel_Category4.SuspendLayout();
             panel_Category2.SuspendLayout();
@@ -90,6 +89,7 @@
             panel_Category5.SuspendLayout();
             panel_Category6.SuspendLayout();
             panel_Category1.SuspendLayout();
+            flowLayoutPanel_DifficaltyLevel.SuspendLayout();
             panel_MenuButtons.SuspendLayout();
             panel_Title.SuspendLayout();
             panel_Coins.SuspendLayout();
@@ -101,8 +101,8 @@
             panel_Main.BackColor = Color.Transparent;
             panel_Main.BackgroundImage = (Image)resources.GetObject("panel_Main.BackgroundImage");
             panel_Main.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Main.Controls.Add(panel_CategoryButtons);
             panel_Main.Controls.Add(panel_Question);
+            panel_Main.Controls.Add(panel_CategoryButtons);
             panel_Main.Controls.Add(flowLayoutPanel_DifficaltyLevel);
             panel_Main.Controls.Add(panel_MenuButtons);
             panel_Main.Controls.Add(panel_Title);
@@ -204,7 +204,7 @@
             label_Hints.Name = "label_Hints";
             label_Hints.Size = new Size(803, 83);
             label_Hints.TabIndex = 5;
-            label_Hints.Text = "Подсказки";
+            label_Hints.Text = "Подсказки. Цена 30 монеточек";
             label_Hints.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel_YourLevel
@@ -258,6 +258,239 @@
             label_AskingQuestion.Size = new Size(1268, 254);
             label_AskingQuestion.TabIndex = 0;
             label_AskingQuestion.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // panel_CategoryButtons
+            // 
+            panel_CategoryButtons.Anchor = AnchorStyles.None;
+            panel_CategoryButtons.Controls.Add(panel_Category4);
+            panel_CategoryButtons.Controls.Add(panel_Category2);
+            panel_CategoryButtons.Controls.Add(panel_Category3);
+            panel_CategoryButtons.Controls.Add(panel_Category5);
+            panel_CategoryButtons.Controls.Add(panel_Category6);
+            panel_CategoryButtons.Controls.Add(panel_Category1);
+            panel_CategoryButtons.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            panel_CategoryButtons.ForeColor = Color.WhiteSmoke;
+            panel_CategoryButtons.Location = new Point(0, 301);
+            panel_CategoryButtons.Name = "panel_CategoryButtons";
+            panel_CategoryButtons.Size = new Size(1299, 743);
+            panel_CategoryButtons.TabIndex = 5;
+            panel_CategoryButtons.Visible = false;
+            // 
+            // panel_Category4
+            // 
+            panel_Category4.Anchor = AnchorStyles.None;
+            panel_Category4.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category4.Controls.Add(label_Category4);
+            panel_Category4.Controls.Add(button_Category4);
+            panel_Category4.Location = new Point(156, 391);
+            panel_Category4.Name = "panel_Category4";
+            panel_Category4.Size = new Size(221, 314);
+            panel_Category4.TabIndex = 2;
+            // 
+            // label_Category4
+            // 
+            label_Category4.Dock = DockStyle.Bottom;
+            label_Category4.Location = new Point(0, 200);
+            label_Category4.Name = "label_Category4";
+            label_Category4.Size = new Size(221, 114);
+            label_Category4.TabIndex = 5;
+            label_Category4.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category4
+            // 
+            button_Category4.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category4.Dock = DockStyle.Top;
+            button_Category4.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category4.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category4.FlatStyle = FlatStyle.Flat;
+            button_Category4.Font = new Font("Segoe UI Semibold", 1E-14F, FontStyle.Bold);
+            button_Category4.Location = new Point(0, 0);
+            button_Category4.Name = "button_Category4";
+            button_Category4.Size = new Size(221, 194);
+            button_Category4.TabIndex = 0;
+            button_Category4.UseVisualStyleBackColor = true;
+            button_Category4.Click += button_Category_Click;
+            // 
+            // panel_Category2
+            // 
+            panel_Category2.Anchor = AnchorStyles.None;
+            panel_Category2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category2.Controls.Add(label_Category2);
+            panel_Category2.Controls.Add(button_Category2);
+            panel_Category2.Location = new Point(552, 52);
+            panel_Category2.Name = "panel_Category2";
+            panel_Category2.Size = new Size(226, 289);
+            panel_Category2.TabIndex = 2;
+            // 
+            // label_Category2
+            // 
+            label_Category2.Dock = DockStyle.Bottom;
+            label_Category2.Location = new Point(0, 197);
+            label_Category2.Name = "label_Category2";
+            label_Category2.Size = new Size(226, 92);
+            label_Category2.TabIndex = 5;
+            label_Category2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category2
+            // 
+            button_Category2.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category2.Dock = DockStyle.Top;
+            button_Category2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category2.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category2.FlatStyle = FlatStyle.Flat;
+            button_Category2.Font = new Font("Segoe UI Semibold", 1E-07F, FontStyle.Bold);
+            button_Category2.ForeColor = Color.WhiteSmoke;
+            button_Category2.Location = new Point(0, 0);
+            button_Category2.Name = "button_Category2";
+            button_Category2.Size = new Size(226, 194);
+            button_Category2.TabIndex = 0;
+            button_Category2.UseVisualStyleBackColor = true;
+            button_Category2.Click += button_Category_Click;
+            // 
+            // panel_Category3
+            // 
+            panel_Category3.Anchor = AnchorStyles.None;
+            panel_Category3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category3.Controls.Add(label_Category3);
+            panel_Category3.Controls.Add(button_Category3);
+            panel_Category3.Location = new Point(928, 52);
+            panel_Category3.Name = "panel_Category3";
+            panel_Category3.Size = new Size(221, 289);
+            panel_Category3.TabIndex = 2;
+            // 
+            // label_Category3
+            // 
+            label_Category3.Dock = DockStyle.Bottom;
+            label_Category3.Location = new Point(0, 197);
+            label_Category3.Name = "label_Category3";
+            label_Category3.Size = new Size(221, 92);
+            label_Category3.TabIndex = 5;
+            label_Category3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category3
+            // 
+            button_Category3.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category3.Dock = DockStyle.Top;
+            button_Category3.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category3.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category3.FlatStyle = FlatStyle.Flat;
+            button_Category3.Font = new Font("Segoe UI Semibold", 1E-14F, FontStyle.Bold);
+            button_Category3.Location = new Point(0, 0);
+            button_Category3.Name = "button_Category3";
+            button_Category3.Size = new Size(221, 194);
+            button_Category3.TabIndex = 0;
+            button_Category3.UseVisualStyleBackColor = true;
+            button_Category3.Click += button_Category_Click;
+            // 
+            // panel_Category5
+            // 
+            panel_Category5.Anchor = AnchorStyles.None;
+            panel_Category5.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category5.Controls.Add(button_Category5);
+            panel_Category5.Controls.Add(label_Category5);
+            panel_Category5.Location = new Point(552, 391);
+            panel_Category5.Name = "panel_Category5";
+            panel_Category5.Size = new Size(226, 314);
+            panel_Category5.TabIndex = 2;
+            // 
+            // button_Category5
+            // 
+            button_Category5.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category5.Dock = DockStyle.Top;
+            button_Category5.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category5.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category5.FlatStyle = FlatStyle.Flat;
+            button_Category5.Font = new Font("Segoe UI Semibold", 1E-15F, FontStyle.Bold);
+            button_Category5.Location = new Point(0, 0);
+            button_Category5.Name = "button_Category5";
+            button_Category5.Size = new Size(226, 194);
+            button_Category5.TabIndex = 0;
+            button_Category5.UseVisualStyleBackColor = true;
+            button_Category5.Click += button_Category_Click;
+            // 
+            // label_Category5
+            // 
+            label_Category5.Dock = DockStyle.Bottom;
+            label_Category5.Location = new Point(0, 200);
+            label_Category5.Name = "label_Category5";
+            label_Category5.Size = new Size(226, 114);
+            label_Category5.TabIndex = 5;
+            label_Category5.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // panel_Category6
+            // 
+            panel_Category6.Anchor = AnchorStyles.None;
+            panel_Category6.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category6.Controls.Add(label_Category6);
+            panel_Category6.Controls.Add(button_Category6);
+            panel_Category6.Font = new Font("Segoe UI", 12F);
+            panel_Category6.ForeColor = Color.Black;
+            panel_Category6.Location = new Point(928, 391);
+            panel_Category6.Name = "panel_Category6";
+            panel_Category6.Size = new Size(227, 314);
+            panel_Category6.TabIndex = 2;
+            // 
+            // label_Category6
+            // 
+            label_Category6.Dock = DockStyle.Bottom;
+            label_Category6.ForeColor = Color.WhiteSmoke;
+            label_Category6.Location = new Point(0, 200);
+            label_Category6.Name = "label_Category6";
+            label_Category6.Size = new Size(227, 114);
+            label_Category6.TabIndex = 6;
+            label_Category6.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category6
+            // 
+            button_Category6.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category6.Dock = DockStyle.Top;
+            button_Category6.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category6.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category6.FlatStyle = FlatStyle.Flat;
+            button_Category6.Font = new Font("Segoe UI", 1E-22F);
+            button_Category6.ForeColor = Color.WhiteSmoke;
+            button_Category6.Location = new Point(0, 0);
+            button_Category6.Name = "button_Category6";
+            button_Category6.Size = new Size(227, 194);
+            button_Category6.TabIndex = 0;
+            button_Category6.UseVisualStyleBackColor = true;
+            button_Category6.Click += button_Category_Click;
+            // 
+            // panel_Category1
+            // 
+            panel_Category1.Anchor = AnchorStyles.None;
+            panel_Category1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel_Category1.Controls.Add(label_Category1);
+            panel_Category1.Controls.Add(button_Category1);
+            panel_Category1.Location = new Point(156, 52);
+            panel_Category1.Name = "panel_Category1";
+            panel_Category1.Size = new Size(221, 314);
+            panel_Category1.TabIndex = 1;
+            // 
+            // label_Category1
+            // 
+            label_Category1.Dock = DockStyle.Bottom;
+            label_Category1.Location = new Point(0, 197);
+            label_Category1.Name = "label_Category1";
+            label_Category1.Size = new Size(221, 117);
+            label_Category1.TabIndex = 4;
+            label_Category1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Category1
+            // 
+            button_Category1.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Category1.Dock = DockStyle.Top;
+            button_Category1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_Category1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_Category1.FlatStyle = FlatStyle.Flat;
+            button_Category1.Font = new Font("Segoe UI Semibold", 1E-12F, FontStyle.Bold);
+            button_Category1.ForeColor = Color.Transparent;
+            button_Category1.Location = new Point(0, 0);
+            button_Category1.Name = "button_Category1";
+            button_Category1.Size = new Size(221, 194);
+            button_Category1.TabIndex = 0;
+            button_Category1.UseVisualStyleBackColor = true;
+            button_Category1.Click += button_Category_Click;
             // 
             // flowLayoutPanel_DifficaltyLevel
             // 
@@ -322,233 +555,6 @@
             button_HardLevel.UseVisualStyleBackColor = false;
             button_HardLevel.Click += ChooseLevel;
             // 
-            // panel_CategoryButtons
-            // 
-            panel_CategoryButtons.Anchor = AnchorStyles.None;
-            panel_CategoryButtons.Controls.Add(panel_Category4);
-            panel_CategoryButtons.Controls.Add(panel_Category2);
-            panel_CategoryButtons.Controls.Add(panel_Category3);
-            panel_CategoryButtons.Controls.Add(panel_Category5);
-            panel_CategoryButtons.Controls.Add(panel_Category6);
-            panel_CategoryButtons.Controls.Add(panel_Category1);
-            panel_CategoryButtons.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            panel_CategoryButtons.ForeColor = Color.WhiteSmoke;
-            panel_CategoryButtons.Location = new Point(0, 301);
-            panel_CategoryButtons.Name = "panel_CategoryButtons";
-            panel_CategoryButtons.Size = new Size(1299, 743);
-            panel_CategoryButtons.TabIndex = 5;
-            panel_CategoryButtons.Visible = false;
-            // 
-            // panel_Category4
-            // 
-            panel_Category4.Anchor = AnchorStyles.None;
-            panel_Category4.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category4.Controls.Add(label_Category4);
-            panel_Category4.Controls.Add(button_Category4);
-            panel_Category4.Location = new Point(156, 391);
-            panel_Category4.Name = "panel_Category4";
-            panel_Category4.Size = new Size(221, 314);
-            panel_Category4.TabIndex = 2;
-            // 
-            // label_Category4
-            // 
-            label_Category4.Dock = DockStyle.Bottom;
-            label_Category4.Location = new Point(0, 200);
-            label_Category4.Name = "label_Category4";
-            label_Category4.Size = new Size(221, 114);
-            label_Category4.TabIndex = 5;
-            label_Category4.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category4
-            // 
-            button_Category4.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category4.Dock = DockStyle.Top;
-            button_Category4.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category4.FlatStyle = FlatStyle.Flat;
-            button_Category4.Location = new Point(0, 0);
-            button_Category4.Name = "button_Category4";
-            button_Category4.Size = new Size(221, 194);
-            button_Category4.TabIndex = 0;
-            button_Category4.UseVisualStyleBackColor = true;
-            button_Category4.Click += button_Category_Click;
-            // 
-            // panel_Category2
-            // 
-            panel_Category2.Anchor = AnchorStyles.None;
-            panel_Category2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category2.Controls.Add(label_Category2);
-            panel_Category2.Controls.Add(button_Category2);
-            panel_Category2.Location = new Point(552, 52);
-            panel_Category2.Name = "panel_Category2";
-            panel_Category2.Size = new Size(226, 289);
-            panel_Category2.TabIndex = 2;
-            // 
-            // label_Category2
-            // 
-            label_Category2.Dock = DockStyle.Bottom;
-            label_Category2.Location = new Point(0, 197);
-            label_Category2.Name = "label_Category2";
-            label_Category2.Size = new Size(226, 92);
-            label_Category2.TabIndex = 5;
-            label_Category2.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category2
-            // 
-            button_Category2.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category2.Dock = DockStyle.Top;
-            button_Category2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category2.FlatStyle = FlatStyle.Flat;
-            button_Category2.ForeColor = Color.WhiteSmoke;
-            button_Category2.Location = new Point(0, 0);
-            button_Category2.Name = "button_Category2";
-            button_Category2.Size = new Size(226, 194);
-            button_Category2.TabIndex = 0;
-            button_Category2.UseVisualStyleBackColor = true;
-            button_Category2.Click += button_Category_Click;
-            // 
-            // panel_Category3
-            // 
-            panel_Category3.Anchor = AnchorStyles.None;
-            panel_Category3.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category3.Controls.Add(label_Category3);
-            panel_Category3.Controls.Add(button_Category3);
-            panel_Category3.Location = new Point(928, 52);
-            panel_Category3.Name = "panel_Category3";
-            panel_Category3.Size = new Size(221, 289);
-            panel_Category3.TabIndex = 2;
-            // 
-            // label_Category3
-            // 
-            label_Category3.Dock = DockStyle.Bottom;
-            label_Category3.Location = new Point(0, 197);
-            label_Category3.Name = "label_Category3";
-            label_Category3.Size = new Size(221, 92);
-            label_Category3.TabIndex = 5;
-            label_Category3.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category3
-            // 
-            button_Category3.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category3.Dock = DockStyle.Top;
-            button_Category3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category3.FlatStyle = FlatStyle.Flat;
-            button_Category3.Location = new Point(0, 0);
-            button_Category3.Name = "button_Category3";
-            button_Category3.Size = new Size(221, 194);
-            button_Category3.TabIndex = 0;
-            button_Category3.UseVisualStyleBackColor = true;
-            button_Category3.Click += button_Category_Click;
-            // 
-            // panel_Category5
-            // 
-            panel_Category5.Anchor = AnchorStyles.None;
-            panel_Category5.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category5.Controls.Add(button_Category5);
-            panel_Category5.Controls.Add(label_Category5);
-            panel_Category5.Location = new Point(552, 391);
-            panel_Category5.Name = "panel_Category5";
-            panel_Category5.Size = new Size(226, 314);
-            panel_Category5.TabIndex = 2;
-            // 
-            // button_Category5
-            // 
-            button_Category5.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category5.Dock = DockStyle.Top;
-            button_Category5.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category5.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category5.FlatStyle = FlatStyle.Flat;
-            button_Category5.Location = new Point(0, 0);
-            button_Category5.Name = "button_Category5";
-            button_Category5.Size = new Size(226, 194);
-            button_Category5.TabIndex = 0;
-            button_Category5.UseVisualStyleBackColor = true;
-            button_Category5.Click += button_Category_Click;
-            // 
-            // label_Category5
-            // 
-            label_Category5.Dock = DockStyle.Bottom;
-            label_Category5.Location = new Point(0, 200);
-            label_Category5.Name = "label_Category5";
-            label_Category5.Size = new Size(226, 114);
-            label_Category5.TabIndex = 5;
-            label_Category5.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // panel_Category6
-            // 
-            panel_Category6.Anchor = AnchorStyles.None;
-            panel_Category6.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category6.Controls.Add(label_Category6);
-            panel_Category6.Controls.Add(button_Category6);
-            panel_Category6.Font = new Font("Segoe UI", 12F);
-            panel_Category6.ForeColor = Color.Black;
-            panel_Category6.Location = new Point(928, 391);
-            panel_Category6.Name = "panel_Category6";
-            panel_Category6.Size = new Size(227, 314);
-            panel_Category6.TabIndex = 2;
-            // 
-            // label_Category6
-            // 
-            label_Category6.Dock = DockStyle.Bottom;
-            label_Category6.ForeColor = Color.WhiteSmoke;
-            label_Category6.Location = new Point(0, 200);
-            label_Category6.Name = "label_Category6";
-            label_Category6.Size = new Size(227, 114);
-            label_Category6.TabIndex = 6;
-            label_Category6.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category6
-            // 
-            button_Category6.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category6.Dock = DockStyle.Top;
-            button_Category6.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category6.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category6.FlatStyle = FlatStyle.Flat;
-            button_Category6.ForeColor = Color.WhiteSmoke;
-            button_Category6.Location = new Point(0, 0);
-            button_Category6.Name = "button_Category6";
-            button_Category6.Size = new Size(227, 194);
-            button_Category6.TabIndex = 0;
-            button_Category6.UseVisualStyleBackColor = true;
-            button_Category6.Click += button_Category_Click;
-            // 
-            // panel_Category1
-            // 
-            panel_Category1.Anchor = AnchorStyles.None;
-            panel_Category1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_Category1.Controls.Add(label_Category1);
-            panel_Category1.Controls.Add(button_Category1);
-            panel_Category1.Location = new Point(156, 52);
-            panel_Category1.Name = "panel_Category1";
-            panel_Category1.Size = new Size(221, 314);
-            panel_Category1.TabIndex = 1;
-            // 
-            // label_Category1
-            // 
-            label_Category1.Dock = DockStyle.Bottom;
-            label_Category1.Location = new Point(0, 197);
-            label_Category1.Name = "label_Category1";
-            label_Category1.Size = new Size(221, 117);
-            label_Category1.TabIndex = 4;
-            label_Category1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Category1
-            // 
-            button_Category1.BackgroundImageLayout = ImageLayout.Stretch;
-            button_Category1.Dock = DockStyle.Top;
-            button_Category1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button_Category1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button_Category1.FlatStyle = FlatStyle.Flat;
-            button_Category1.ForeColor = Color.WhiteSmoke;
-            button_Category1.Location = new Point(0, 0);
-            button_Category1.Name = "button_Category1";
-            button_Category1.Size = new Size(221, 194);
-            button_Category1.TabIndex = 0;
-            button_Category1.UseVisualStyleBackColor = true;
-            button_Category1.Click += button_Category_Click;
-            // 
             // panel_MenuButtons
             // 
             panel_MenuButtons.Anchor = AnchorStyles.Bottom;
@@ -579,6 +585,7 @@
             button_50.Text = "50:50";
             button_50.UseVisualStyleBackColor = false;
             button_50.Visible = false;
+            button_50.Click += button_50_Click;
             // 
             // button_FriendHelp
             // 
@@ -613,6 +620,7 @@
             button_PeopleHelp.Text = "Помощь зала";
             button_PeopleHelp.UseVisualStyleBackColor = false;
             button_PeopleHelp.Visible = false;
+            button_PeopleHelp.Click += button_PeopleHelp_Click;
             // 
             // button_Info
             // 
@@ -760,7 +768,6 @@
             panel_Main.ResumeLayout(false);
             panel_Question.ResumeLayout(false);
             panel_YourLevel.ResumeLayout(false);
-            flowLayoutPanel_DifficaltyLevel.ResumeLayout(false);
             panel_CategoryButtons.ResumeLayout(false);
             panel_Category4.ResumeLayout(false);
             panel_Category2.ResumeLayout(false);
@@ -768,6 +775,7 @@
             panel_Category5.ResumeLayout(false);
             panel_Category6.ResumeLayout(false);
             panel_Category1.ResumeLayout(false);
+            flowLayoutPanel_DifficaltyLevel.ResumeLayout(false);
             panel_MenuButtons.ResumeLayout(false);
             panel_Title.ResumeLayout(false);
             panel_Coins.ResumeLayout(false);

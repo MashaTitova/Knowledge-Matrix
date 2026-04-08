@@ -8,10 +8,32 @@
     ".NETCoreApp,Version=v10.0": {
       "Knowledge-Matrix/1.0.0": {
         "dependencies": {
-          "GetQuestions": "1.0.0"
+          "GetQuestions": "1.0.0",
+          "System.Windows.Forms.DataVisualization": "1.0.0-prerelease.20110.1",
+          "WinForms.DataVisualization": "1.10.0"
         },
         "runtime": {
           "Knowledge-Matrix.dll": {}
+        }
+      },
+      "System.Windows.Forms.DataVisualization/1.0.0-prerelease.20110.1": {
+        "runtime": {
+          "lib/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.20.11001"
+          }
+        }
+      },
+      "WinForms.DataVisualization/1.10.0": {
+        "runtime": {
+          "lib/net9.0-windows7.0/WinForms.DataVisualization.Utilities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.10.0.0"
+          },
+          "lib/net9.0-windows7.0/WinForms.DataVisualization.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.10.0.0"
+          }
         }
       },
       "GetQuestions/1.0.0": {
@@ -29,6 +51,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "System.Windows.Forms.DataVisualization/1.0.0-prerelease.20110.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1EdLFl/I5QobO4shpqUNslDGWTeRbpt3pLMSkiLQYzdWBDqf44/8TM5hXMtkA8ktHU80aVZYVEuxr8vJqcB1Ig==",
+      "path": "system.windows.forms.datavisualization/1.0.0-prerelease.20110.1",
+      "hashPath": "system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512"
+    },
+    "WinForms.DataVisualization/1.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QKFQUf6xnsseiRsWfIeKvbWRJWvOKOvkoec/pWxEjwYrr4Vix4xmAWmvTpJGxoeWRXOzV7Pprm5SCFqzXzBA4g==",
+      "path": "winforms.datavisualization/1.10.0",
+      "hashPath": "winforms.datavisualization.1.10.0.nupkg.sha512"
     },
     "GetQuestions/1.0.0": {
       "type": "project",
