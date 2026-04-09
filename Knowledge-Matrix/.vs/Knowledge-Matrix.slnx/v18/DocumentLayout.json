@@ -7,7 +7,35 @@
       "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:knowledgematrix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|d:\\_git\\knowledge-matrix\\knowledge-matrix\\knowledgematrix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:knowledgematrix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|d:\\_git\\knowledge-matrix\\knowledge-matrix\\friendhelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:friendhelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\friendhelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:friendhelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ED093E30-E4A0-4EF0-B7BD-217092F63F5D}|..\\UsefullClassLibrary\\GetQuestions.csproj|d:\\_git\\knowledge-matrix\\usefullclasslibrary\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|d:\\_git\\knowledge-matrix\\knowledge-matrix\\winform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:winform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\winform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:winform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|d:\\_git\\knowledge-matrix\\knowledge-matrix\\friendhelp.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:friendhelp.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\peoplehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:peoplehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED093E30-E4A0-4EF0-B7BD-217092F63F5D}|..\\UsefullClassLibrary\\GetQuestions.csproj|d:\\_git\\knowledge-matrix\\usefullclasslibrary\\randomazer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -15,14 +43,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|d:\\_git\\knowledge-matrix\\knowledge-matrix\\peoplehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:peoplehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|d:\\_git\\knowledge-matrix\\knowledge-matrix\\peoplehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:peoplehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\knowledgematrix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BB34074B-F552-7D0B-1DE1-0D6EE5DAFD94}|Knowledge-Matrix.csproj|solutionrelative:knowledgematrix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C29B876-4CBE-4486-BFF1-F2FE72ABDC2E}|..\\KnowledgeMatrixTestProject\\KnowledgeMatrixTestProject.csproj|d:\\_git\\knowledge-matrix\\knowledgematrixtestproject\\questiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -42,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,45 +78,57 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KnowledgeMatrix.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\KnowledgeMatrix.cs",
+              "RelativeDocumentMoniker": "KnowledgeMatrix.cs",
+              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\KnowledgeMatrix.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "RelativeToolTip": "KnowledgeMatrix.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T15:36:31.796Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FriendHelp.cs",
+              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\FriendHelp.cs",
+              "RelativeDocumentMoniker": "FriendHelp.cs",
+              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\FriendHelp.cs",
+              "RelativeToolTip": "FriendHelp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T20:13:03.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "KnowledgeMatrix.cs",
               "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\KnowledgeMatrix.cs",
               "RelativeDocumentMoniker": "KnowledgeMatrix.cs",
-              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\KnowledgeMatrix.cs",
-              "RelativeToolTip": "KnowledgeMatrix.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwFEBAAAgAAAAAAAAAA==",
+              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\KnowledgeMatrix.cs*",
+              "RelativeToolTip": "KnowledgeMatrix.cs*",
+              "ViewState": "AgIAAMACAAAAAAAAAAAgwOsCAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-30T15:50:43.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Randomazer.cs",
-              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\UsefullClassLibrary\\Randomazer.cs",
-              "RelativeDocumentMoniker": "..\\UsefullClassLibrary\\Randomazer.cs",
-              "ToolTip": "D:\\_git\\Knowledge-Matrix\\UsefullClassLibrary\\Randomazer.cs",
-              "RelativeToolTip": "..\\UsefullClassLibrary\\Randomazer.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAwCAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "FriendHelp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\FriendHelp.cs",
+              "RelativeDocumentMoniker": "FriendHelp.cs",
+              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\FriendHelp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "FriendHelp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T11:44:20.789Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PeopleHelp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\PeopleHelp.cs",
-              "RelativeDocumentMoniker": "PeopleHelp.cs",
-              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\PeopleHelp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "PeopleHelp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T18:11:54.481Z",
+              "WhenOpened": "2026-04-08T19:51:58.142Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Question.cs",
               "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\UsefullClassLibrary\\Question.cs",
               "RelativeDocumentMoniker": "..\\UsefullClassLibrary\\Question.cs",
@@ -104,12 +136,71 @@
               "RelativeToolTip": "..\\UsefullClassLibrary\\Question.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T15:17:09.592Z",
+              "WhenOpened": "2026-04-02T15:17:09.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WinForm.cs",
+              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\WinForm.cs",
+              "RelativeDocumentMoniker": "WinForm.cs",
+              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\WinForm.cs",
+              "RelativeToolTip": "WinForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T05:48:55.931Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "WinForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\WinForm.cs",
+              "RelativeDocumentMoniker": "WinForm.cs",
+              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\WinForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "WinForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T05:47:31.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FriendHelp.Designer.cs",
+              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\FriendHelp.Designer.cs",
+              "RelativeDocumentMoniker": "FriendHelp.Designer.cs",
+              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\FriendHelp.Designer.cs",
+              "RelativeToolTip": "FriendHelp.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T20:56:09.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PeopleHelp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\PeopleHelp.cs",
+              "RelativeDocumentMoniker": "PeopleHelp.cs",
+              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\PeopleHelp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "PeopleHelp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T18:11:54.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Randomazer.cs",
+              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\UsefullClassLibrary\\Randomazer.cs",
+              "RelativeDocumentMoniker": "..\\UsefullClassLibrary\\Randomazer.cs",
+              "ToolTip": "D:\\_git\\Knowledge-Matrix\\UsefullClassLibrary\\Randomazer.cs",
+              "RelativeToolTip": "..\\UsefullClassLibrary\\Randomazer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T11:44:20.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "PeopleHelp.cs",
               "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\PeopleHelp.cs",
               "RelativeDocumentMoniker": "PeopleHelp.cs",
@@ -117,24 +208,11 @@
               "RelativeToolTip": "PeopleHelp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T18:22:18.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-08T18:22:18.967Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "KnowledgeMatrix.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\KnowledgeMatrix.cs",
-              "RelativeDocumentMoniker": "KnowledgeMatrix.cs",
-              "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\KnowledgeMatrix.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "KnowledgeMatrix.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T15:36:31.796Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "QuestionTest.cs",
               "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\KnowledgeMatrixTestProject\\QuestionTest.cs",
               "RelativeDocumentMoniker": "..\\KnowledgeMatrixTestProject\\QuestionTest.cs",
@@ -142,12 +220,11 @@
               "RelativeToolTip": "..\\KnowledgeMatrixTestProject\\QuestionTest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T17:14:22.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-08T17:14:22.917Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "ReadFile.cs",
               "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\UsefullClassLibrary\\ReadFile.cs",
               "RelativeDocumentMoniker": "..\\UsefullClassLibrary\\ReadFile.cs",
@@ -155,20 +232,18 @@
               "RelativeToolTip": "..\\UsefullClassLibrary\\ReadFile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T08:47:14.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T08:47:14.362Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "Resources.resx",
               "DocumentMoniker": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\Properties\\Resources.resx",
               "RelativeDocumentMoniker": "Properties\\Resources.resx",
               "ToolTip": "D:\\_git\\Knowledge-Matrix\\Knowledge-Matrix\\Properties\\Resources.resx",
               "RelativeToolTip": "Properties\\Resources.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-04-03T09:54:27.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:54:27.531Z"
             }
           ]
         }

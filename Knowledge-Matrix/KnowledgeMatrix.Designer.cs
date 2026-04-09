@@ -133,15 +133,15 @@
             // button_Answer3
             // 
             button_Answer3.Anchor = AnchorStyles.None;
-            button_Answer3.BackColor = Color.FromArgb(128, 255, 128);
+            button_Answer3.BackColor = Color.FromArgb(0, 192, 0);
             button_Answer3.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
             button_Answer3.FlatAppearance.BorderSize = 10;
             button_Answer3.FlatAppearance.CheckedBackColor = Color.Teal;
             button_Answer3.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
             button_Answer3.ForeColor = SystemColors.ButtonHighlight;
-            button_Answer3.Location = new Point(662, 508);
+            button_Answer3.Location = new Point(659, 508);
             button_Answer3.Name = "button_Answer3";
-            button_Answer3.Size = new Size(299, 111);
+            button_Answer3.Size = new Size(299, 128);
             button_Answer3.TabIndex = 14;
             button_Answer3.UseVisualStyleBackColor = false;
             button_Answer3.Click += button_Answer3_Click;
@@ -149,7 +149,7 @@
             // button_Answer2
             // 
             button_Answer2.Anchor = AnchorStyles.None;
-            button_Answer2.BackColor = Color.FromArgb(128, 255, 255);
+            button_Answer2.BackColor = Color.FromArgb(0, 192, 192);
             button_Answer2.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
             button_Answer2.FlatAppearance.BorderSize = 10;
             button_Answer2.FlatAppearance.CheckedBackColor = Color.Teal;
@@ -157,7 +157,7 @@
             button_Answer2.ForeColor = SystemColors.ButtonHighlight;
             button_Answer2.Location = new Point(327, 508);
             button_Answer2.Name = "button_Answer2";
-            button_Answer2.Size = new Size(308, 111);
+            button_Answer2.Size = new Size(308, 128);
             button_Answer2.TabIndex = 13;
             button_Answer2.UseVisualStyleBackColor = false;
             button_Answer2.Click += button_Answer2_Click;
@@ -165,15 +165,15 @@
             // button_Answer4
             // 
             button_Answer4.Anchor = AnchorStyles.None;
-            button_Answer4.BackColor = Color.FromArgb(255, 128, 255);
+            button_Answer4.BackColor = Color.FromArgb(192, 0, 192);
             button_Answer4.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
             button_Answer4.FlatAppearance.BorderSize = 10;
             button_Answer4.FlatAppearance.CheckedBackColor = Color.Teal;
             button_Answer4.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
             button_Answer4.ForeColor = SystemColors.ButtonHighlight;
-            button_Answer4.Location = new Point(953, 373);
+            button_Answer4.Location = new Point(955, 358);
             button_Answer4.Name = "button_Answer4";
-            button_Answer4.Size = new Size(313, 111);
+            button_Answer4.Size = new Size(313, 144);
             button_Answer4.TabIndex = 12;
             button_Answer4.UseVisualStyleBackColor = false;
             button_Answer4.Click += button_Answer4_Click;
@@ -182,7 +182,7 @@
             // 
             button_Answer1.AllowDrop = true;
             button_Answer1.Anchor = AnchorStyles.None;
-            button_Answer1.BackColor = Color.FromArgb(128, 128, 255);
+            button_Answer1.BackColor = Color.Blue;
             button_Answer1.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
             button_Answer1.FlatAppearance.BorderSize = 10;
             button_Answer1.FlatAppearance.CheckedBackColor = Color.Teal;
@@ -190,7 +190,7 @@
             button_Answer1.ForeColor = SystemColors.ButtonHighlight;
             button_Answer1.Location = new Point(22, 358);
             button_Answer1.Name = "button_Answer1";
-            button_Answer1.Size = new Size(302, 111);
+            button_Answer1.Size = new Size(302, 144);
             button_Answer1.TabIndex = 11;
             button_Answer1.UseVisualStyleBackColor = false;
             button_Answer1.Click += button_Answer1_Click;
@@ -257,7 +257,7 @@
             label_AskingQuestion.Name = "label_AskingQuestion";
             label_AskingQuestion.Size = new Size(1268, 254);
             label_AskingQuestion.TabIndex = 0;
-            label_AskingQuestion.TextAlign = ContentAlignment.TopCenter;
+            label_AskingQuestion.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel_CategoryButtons
             // 
@@ -557,7 +557,7 @@
             // 
             // panel_MenuButtons
             // 
-            panel_MenuButtons.Anchor = AnchorStyles.Bottom;
+            panel_MenuButtons.Anchor = AnchorStyles.None;
             panel_MenuButtons.Controls.Add(button_50);
             panel_MenuButtons.Controls.Add(button_FriendHelp);
             panel_MenuButtons.Controls.Add(button_PeopleHelp);
@@ -580,7 +580,7 @@
             button_50.ForeColor = SystemColors.ButtonHighlight;
             button_50.Location = new Point(260, 28);
             button_50.Name = "button_50";
-            button_50.Size = new Size(221, 111);
+            button_50.Size = new Size(221, 125);
             button_50.TabIndex = 10;
             button_50.Text = "50:50";
             button_50.UseVisualStyleBackColor = false;
@@ -598,11 +598,12 @@
             button_FriendHelp.ForeColor = SystemColors.ButtonHighlight;
             button_FriendHelp.Location = new Point(779, 28);
             button_FriendHelp.Name = "button_FriendHelp";
-            button_FriendHelp.Size = new Size(241, 111);
+            button_FriendHelp.Size = new Size(241, 125);
             button_FriendHelp.TabIndex = 9;
             button_FriendHelp.Text = "Звонок другу";
             button_FriendHelp.UseVisualStyleBackColor = false;
             button_FriendHelp.Visible = false;
+            button_FriendHelp.Click += GetFriendHelpForm;
             // 
             // button_PeopleHelp
             // 
@@ -615,7 +616,7 @@
             button_PeopleHelp.ForeColor = SystemColors.ButtonHighlight;
             button_PeopleHelp.Location = new Point(518, 28);
             button_PeopleHelp.Name = "button_PeopleHelp";
-            button_PeopleHelp.Size = new Size(238, 111);
+            button_PeopleHelp.Size = new Size(238, 125);
             button_PeopleHelp.TabIndex = 8;
             button_PeopleHelp.Text = "Помощь зала";
             button_PeopleHelp.UseVisualStyleBackColor = false;
@@ -633,10 +634,11 @@
             button_Info.ForeColor = SystemColors.ButtonHighlight;
             button_Info.Location = new Point(10, 28);
             button_Info.Name = "button_Info";
-            button_Info.Size = new Size(223, 111);
+            button_Info.Size = new Size(223, 125);
             button_Info.TabIndex = 7;
-            button_Info.Text = "Справка";
+            button_Info.Text = "Об игре";
             button_Info.UseVisualStyleBackColor = false;
+            button_Info.Click += button_Info_Click;
             // 
             // button_return
             // 
@@ -649,7 +651,7 @@
             button_return.ForeColor = SystemColors.ButtonHighlight;
             button_return.Location = new Point(1048, 28);
             button_return.Name = "button_return";
-            button_return.Size = new Size(230, 111);
+            button_return.Size = new Size(230, 125);
             button_return.TabIndex = 6;
             button_return.Text = "Выход из приложения";
             button_return.UseVisualStyleBackColor = false;
@@ -705,7 +707,7 @@
             label_KnowlegeMatrix.ForeColor = Color.WhiteSmoke;
             label_KnowlegeMatrix.Location = new Point(0, 0);
             label_KnowlegeMatrix.Name = "label_KnowlegeMatrix";
-            label_KnowlegeMatrix.Size = new Size(1298, 180);
+            label_KnowlegeMatrix.Size = new Size(1298, 147);
             label_KnowlegeMatrix.TabIndex = 0;
             label_KnowlegeMatrix.Text = "Матрица Знаний";
             label_KnowlegeMatrix.TextAlign = ContentAlignment.TopCenter;
@@ -716,9 +718,9 @@
             label_Quize.BackColor = Color.Transparent;
             label_Quize.Font = new Font("Segoe UI Semibold", 17F, FontStyle.Bold);
             label_Quize.ForeColor = Color.WhiteSmoke;
-            label_Quize.Location = new Point(10, 164);
+            label_Quize.Location = new Point(10, 141);
             label_Quize.Name = "label_Quize";
-            label_Quize.Size = new Size(965, 124);
+            label_Quize.Size = new Size(965, 147);
             label_Quize.TabIndex = 1;
             label_Quize.Text = "Интеллектуальный квиз";
             label_Quize.TextAlign = ContentAlignment.TopRight;
