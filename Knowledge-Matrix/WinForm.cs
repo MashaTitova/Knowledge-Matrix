@@ -15,11 +15,6 @@ namespace Knowledge_Matrix
         {
             InitializeComponent();
         }
-
-        private void WinForm_Load(object sender, EventArgs e)
-        {
-
-        }
         private void button_NewGame_Click(object sender, EventArgs e)
         {
             Form_KnowledgeMatrix form = new Form_KnowledgeMatrix();

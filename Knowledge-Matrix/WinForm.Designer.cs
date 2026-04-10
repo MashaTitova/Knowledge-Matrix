@@ -45,6 +45,7 @@
             button_Exit.TabIndex = 3;
             button_Exit.Text = "Выход из приложения";
             button_Exit.UseVisualStyleBackColor = false;
+            button_Exit.Click += button_Exit_Click;
             // 
             // button_NewGame
             // 
@@ -58,6 +59,7 @@
             button_NewGame.TabIndex = 2;
             button_NewGame.Text = "Новая игра";
             button_NewGame.UseVisualStyleBackColor = false;
+            button_NewGame.Click += button_NewGame_Click;
             // 
             // WinForm
             // 
@@ -71,7 +73,6 @@
             DoubleBuffered = true;
             Name = "WinForm";
             Text = "Победа";
-            Load += WinForm_Load;
             ResumeLayout(false);
         }
 
