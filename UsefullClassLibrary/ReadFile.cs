@@ -8,28 +8,39 @@ namespace GetQuestions
     {
         public static void CheckFile(string filePath)
         {
+            if (string.IsNullOrWhiteSpace(filePath))
+                throw new ArgumentException("Путь к файлу не может быть пустым");
+
             try
             {
-                StreamReader g = new StreamReader(filePath);
+                using StreamReader g = new StreamReader(filePath);
+            }
+            catch (FileNotFoundException)
+            {
+                throw new FileNotFoundException("Файл не найден: " + filePath);
+            }
+            catch (DirectoryNotFoundException)
+            {
+                throw new DirectoryNotFoundException("Указанный путь не существует: " + filePath);
             }
             catch (IOException ex)
             {
                 if (ex.Message.Contains("being used by another process"))
                 {
-                    throw new IOException("Файл занят другим процессом.");
-                }
-                else
-                {
-                    throw new IOException("Ошибка при работе с файлом");
+                    throw new IOException("Файл занят другим процессом: " + filePath);
                 }
             }
             catch (UnauthorizedAccessException)
             {
-                throw new UnauthorizedAccessException("Нет доступа к файлу");
+                throw new UnauthorizedAccessException("Нет доступа к файлу: " + filePath);
             }
-            catch (Exception)
+            catch (ArgumentException)
             {
-                throw new UnauthorizedAccessException("Непредвиденная ошибка");
+                throw; 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Непредвиденная ошибка при проверке файла {filePath}: {ex.Message}", ex);
             }
         }
     }

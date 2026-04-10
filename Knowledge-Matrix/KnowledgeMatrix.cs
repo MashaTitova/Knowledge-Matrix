@@ -256,39 +256,10 @@ namespace Knowledge_Matrix
             }
         }
 
-        private bool ProcessAllButtonsInPanel(Control container)
-        {
-            bool flag = false;
-            foreach (Control ctrl in container.Controls)
-            {
-                foreach (Control child in ctrl.Controls)
-                {
-                    if (child is Button but && but.Enabled)
-                    {
-                        flag = true;
-                        return flag;
-                    }
-                    else if (ctrl.HasChildren)
-                    {
-                        // Рекурсивный вызов для вложенных контейнеров
-                        ProcessAllButtonsInPanel(ctrl);
-                        // Если флаг уже установлен, прерываем дальнейший поиск
-                        if (flag) return flag;
-                    }
-                }
-
-            }
-            return flag;
-        }
         private void button_Category_Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            bool isEnabled = ProcessAllButtonsInPanel(panel_CategoryButtons);
-            if (!isEnabled)
-            {
-                WinForm form = new WinForm();
-                form.ShowDialog();
-            }
+           
 
             string labelName = button.Name.Replace("button_", "label_");
             label_KnowlegeMatrix.Text = $"Категория: {button.Name}";
@@ -402,6 +373,11 @@ namespace Knowledge_Matrix
 
                     }
 
+                }
+                if(completedCategoriesLevels.Count == 18)
+                {
+                        WinForm form = new WinForm();
+                        form.ShowDialog();
                 }
                 currentQuestionsMix.Clear();
                 currentQuestions.Clear();
