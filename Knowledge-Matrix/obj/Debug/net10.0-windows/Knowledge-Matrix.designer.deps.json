@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "System.Windows.Forms.DataVisualization/1.0.0-prerelease.20110.1": {
-        "runtime": {
-          "lib/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.20.11001"
-          }
-        }
-      },
       "WinForms.DataVisualization/1.10.0": {
         "runtime": {
           "lib/net9.0-windows7.0/WinForms.DataVisualization.Utilities.dll": {
@@ -29,13 +21,6 @@
     }
   },
   "libraries": {
-    "System.Windows.Forms.DataVisualization/1.0.0-prerelease.20110.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1EdLFl/I5QobO4shpqUNslDGWTeRbpt3pLMSkiLQYzdWBDqf44/8TM5hXMtkA8ktHU80aVZYVEuxr8vJqcB1Ig==",
-      "path": "system.windows.forms.datavisualization/1.0.0-prerelease.20110.1",
-      "hashPath": "system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512"
-    },
     "WinForms.DataVisualization/1.10.0": {
       "type": "package",
       "serviceable": true,

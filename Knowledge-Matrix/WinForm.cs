@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Security.Policy;
-using System.Text;
-using System.Windows.Forms;
-
+﻿
 namespace Knowledge_Matrix
 {
     public partial class WinForm : Form
     {
+        public bool isReplay = false;
         public WinForm()
         {
             InitializeComponent();
         }
         private void button_NewGame_Click(object sender, EventArgs e)
         {
-            Form_KnowledgeMatrix form = new Form_KnowledgeMatrix();
-            form.button_NewGame_Click();
+            isReplay = true;
+            this.DialogResult = DialogResult.OK; 
+            this.Close(); 
         }
-
+        public bool GetIsReplay()
+        {
+            return isReplay;
+        }
         private void button_Exit_Click(object sender, EventArgs e)
         {
 
@@ -35,5 +32,6 @@ namespace Knowledge_Matrix
                 Application.Exit();
             }
         }
+
     }
 }

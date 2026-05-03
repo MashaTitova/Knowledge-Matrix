@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GetQuestions
+﻿namespace GetQuestions
 {
     public class ReadFile
     {
+        // <summary>
+        /// Проверка доступности читаемого файла
+        /// </summary>
         public static void CheckFile(string filePath)
         {
             if (string.IsNullOrWhiteSpace(filePath))
