@@ -60,15 +60,11 @@
             panel_Category1 = new Panel();
             label_Category1 = new Label();
             button_Category1 = new Button();
-            flowLayoutPanel_DifficaltyLevel = new FlowLayoutPanel();
-            button_EasyLevel = new Button();
-            button_MediumLevel = new Button();
-            button_HardLevel = new Button();
             panel_MenuButtons = new Panel();
             button_50 = new Button();
             button_FriendHelp = new Button();
             button_PeopleHelp = new Button();
-            button_Info = new Button();
+            button_InfoOrMenu = new Button();
             button_return = new Button();
             panel_Title = new Panel();
             panel_Coins = new Panel();
@@ -78,6 +74,10 @@
             label_Quize = new Label();
             panel_StartGame = new Panel();
             button_Start = new Button();
+            flowLayoutPanel_DifficaltyLevel = new FlowLayoutPanel();
+            button_EasyLevel = new Button();
+            button_MediumLevel = new Button();
+            button_HardLevel = new Button();
             button_StartGame = new Button();
             panel_Main.SuspendLayout();
             panel_Question.SuspendLayout();
@@ -89,11 +89,11 @@
             panel_Category5.SuspendLayout();
             panel_Category6.SuspendLayout();
             panel_Category1.SuspendLayout();
-            flowLayoutPanel_DifficaltyLevel.SuspendLayout();
             panel_MenuButtons.SuspendLayout();
             panel_Title.SuspendLayout();
             panel_Coins.SuspendLayout();
             panel_StartGame.SuspendLayout();
+            flowLayoutPanel_DifficaltyLevel.SuspendLayout();
             SuspendLayout();
             // 
             // panel_Main
@@ -103,10 +103,10 @@
             panel_Main.BackgroundImageLayout = ImageLayout.Stretch;
             panel_Main.Controls.Add(panel_Question);
             panel_Main.Controls.Add(panel_CategoryButtons);
-            panel_Main.Controls.Add(flowLayoutPanel_DifficaltyLevel);
             panel_Main.Controls.Add(panel_MenuButtons);
             panel_Main.Controls.Add(panel_Title);
             panel_Main.Controls.Add(panel_StartGame);
+            panel_Main.Controls.Add(flowLayoutPanel_DifficaltyLevel);
             panel_Main.Dock = DockStyle.Fill;
             panel_Main.Location = new Point(0, 0);
             panel_Main.Name = "panel_Main";
@@ -139,9 +139,9 @@
             button_Answer3.FlatAppearance.CheckedBackColor = Color.Teal;
             button_Answer3.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
             button_Answer3.ForeColor = SystemColors.ButtonHighlight;
-            button_Answer3.Location = new Point(659, 508);
+            button_Answer3.Location = new Point(657, 471);
             button_Answer3.Name = "button_Answer3";
-            button_Answer3.Size = new Size(299, 128);
+            button_Answer3.Size = new Size(349, 165);
             button_Answer3.TabIndex = 14;
             button_Answer3.UseVisualStyleBackColor = false;
             button_Answer3.Click += button_Answer3_Click;
@@ -155,9 +155,9 @@
             button_Answer2.FlatAppearance.CheckedBackColor = Color.Teal;
             button_Answer2.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
             button_Answer2.ForeColor = SystemColors.ButtonHighlight;
-            button_Answer2.Location = new Point(327, 508);
+            button_Answer2.Location = new Point(302, 471);
             button_Answer2.Name = "button_Answer2";
-            button_Answer2.Size = new Size(308, 128);
+            button_Answer2.Size = new Size(349, 165);
             button_Answer2.TabIndex = 13;
             button_Answer2.UseVisualStyleBackColor = false;
             button_Answer2.Click += button_Answer2_Click;
@@ -171,9 +171,9 @@
             button_Answer4.FlatAppearance.CheckedBackColor = Color.Teal;
             button_Answer4.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
             button_Answer4.ForeColor = SystemColors.ButtonHighlight;
-            button_Answer4.Location = new Point(955, 358);
+            button_Answer4.Location = new Point(928, 301);
             button_Answer4.Name = "button_Answer4";
-            button_Answer4.Size = new Size(313, 144);
+            button_Answer4.Size = new Size(349, 164);
             button_Answer4.TabIndex = 12;
             button_Answer4.UseVisualStyleBackColor = false;
             button_Answer4.Click += button_Answer4_Click;
@@ -188,9 +188,9 @@
             button_Answer1.FlatAppearance.CheckedBackColor = Color.Teal;
             button_Answer1.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
             button_Answer1.ForeColor = SystemColors.ButtonHighlight;
-            button_Answer1.Location = new Point(22, 358);
+            button_Answer1.Location = new Point(25, 301);
             button_Answer1.Name = "button_Answer1";
-            button_Answer1.Size = new Size(302, 144);
+            button_Answer1.Size = new Size(352, 164);
             button_Answer1.TabIndex = 11;
             button_Answer1.UseVisualStyleBackColor = false;
             button_Answer1.Click += button_Answer1_Click;
@@ -200,11 +200,11 @@
             label_Hints.BorderStyle = BorderStyle.Fixed3D;
             label_Hints.Font = new Font("Segoe UI", 20F);
             label_Hints.ForeColor = Color.WhiteSmoke;
-            label_Hints.Location = new Point(241, 661);
+            label_Hints.Location = new Point(211, 654);
             label_Hints.Name = "label_Hints";
-            label_Hints.Size = new Size(803, 83);
+            label_Hints.Size = new Size(846, 83);
             label_Hints.TabIndex = 5;
-            label_Hints.Text = "Подсказки. Цена 30 монеточек";
+            label_Hints.Text = "Подсказки. Цена - 30 монеточек";
             label_Hints.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel_YourLevel
@@ -255,7 +255,7 @@
             label_AskingQuestion.ForeColor = Color.WhiteSmoke;
             label_AskingQuestion.Location = new Point(12, 88);
             label_AskingQuestion.Name = "label_AskingQuestion";
-            label_AskingQuestion.Size = new Size(1268, 254);
+            label_AskingQuestion.Size = new Size(1268, 210);
             label_AskingQuestion.TabIndex = 0;
             label_AskingQuestion.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -492,76 +492,13 @@
             button_Category1.UseVisualStyleBackColor = true;
             button_Category1.Click += button_Category_Click;
             // 
-            // flowLayoutPanel_DifficaltyLevel
-            // 
-            flowLayoutPanel_DifficaltyLevel.Anchor = AnchorStyles.None;
-            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_EasyLevel);
-            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_MediumLevel);
-            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_HardLevel);
-            flowLayoutPanel_DifficaltyLevel.Location = new Point(400, 400);
-            flowLayoutPanel_DifficaltyLevel.Name = "flowLayoutPanel_DifficaltyLevel";
-            flowLayoutPanel_DifficaltyLevel.Size = new Size(516, 422);
-            flowLayoutPanel_DifficaltyLevel.TabIndex = 3;
-            flowLayoutPanel_DifficaltyLevel.Visible = false;
-            // 
-            // button_EasyLevel
-            // 
-            button_EasyLevel.Anchor = AnchorStyles.None;
-            button_EasyLevel.BackColor = SystemColors.Highlight;
-            button_EasyLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
-            button_EasyLevel.FlatAppearance.BorderSize = 10;
-            button_EasyLevel.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_EasyLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
-            button_EasyLevel.ForeColor = SystemColors.ButtonHighlight;
-            button_EasyLevel.Location = new Point(3, 3);
-            button_EasyLevel.Name = "button_EasyLevel";
-            button_EasyLevel.Size = new Size(502, 129);
-            button_EasyLevel.TabIndex = 14;
-            button_EasyLevel.Text = "Легкий";
-            button_EasyLevel.UseVisualStyleBackColor = false;
-            button_EasyLevel.Click += ChooseLevel;
-            // 
-            // button_MediumLevel
-            // 
-            button_MediumLevel.Anchor = AnchorStyles.None;
-            button_MediumLevel.BackColor = SystemColors.Highlight;
-            button_MediumLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
-            button_MediumLevel.FlatAppearance.BorderSize = 10;
-            button_MediumLevel.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_MediumLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
-            button_MediumLevel.ForeColor = SystemColors.ButtonHighlight;
-            button_MediumLevel.Location = new Point(3, 138);
-            button_MediumLevel.Name = "button_MediumLevel";
-            button_MediumLevel.Size = new Size(502, 129);
-            button_MediumLevel.TabIndex = 13;
-            button_MediumLevel.Text = "Средний";
-            button_MediumLevel.UseVisualStyleBackColor = false;
-            button_MediumLevel.Click += ChooseLevel;
-            // 
-            // button_HardLevel
-            // 
-            button_HardLevel.Anchor = AnchorStyles.None;
-            button_HardLevel.BackColor = SystemColors.Highlight;
-            button_HardLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
-            button_HardLevel.FlatAppearance.BorderSize = 10;
-            button_HardLevel.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_HardLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
-            button_HardLevel.ForeColor = SystemColors.ButtonHighlight;
-            button_HardLevel.Location = new Point(3, 273);
-            button_HardLevel.Name = "button_HardLevel";
-            button_HardLevel.Size = new Size(502, 129);
-            button_HardLevel.TabIndex = 12;
-            button_HardLevel.Text = "Сложный";
-            button_HardLevel.UseVisualStyleBackColor = false;
-            button_HardLevel.Click += ChooseLevel;
-            // 
             // panel_MenuButtons
             // 
             panel_MenuButtons.Anchor = AnchorStyles.None;
             panel_MenuButtons.Controls.Add(button_50);
             panel_MenuButtons.Controls.Add(button_FriendHelp);
             panel_MenuButtons.Controls.Add(button_PeopleHelp);
-            panel_MenuButtons.Controls.Add(button_Info);
+            panel_MenuButtons.Controls.Add(button_InfoOrMenu);
             panel_MenuButtons.Controls.Add(button_return);
             panel_MenuButtons.Font = new Font("Segoe UI", 8F);
             panel_MenuButtons.Location = new Point(2, 1053);
@@ -623,22 +560,22 @@
             button_PeopleHelp.Visible = false;
             button_PeopleHelp.Click += button_PeopleHelp_Click;
             // 
-            // button_Info
+            // button_InfoOrMenu
             // 
-            button_Info.Anchor = AnchorStyles.None;
-            button_Info.BackColor = SystemColors.Highlight;
-            button_Info.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
-            button_Info.FlatAppearance.BorderSize = 10;
-            button_Info.FlatAppearance.CheckedBackColor = Color.Teal;
-            button_Info.Font = new Font("Segoe UI Semibold", 10.125F, FontStyle.Bold);
-            button_Info.ForeColor = SystemColors.ButtonHighlight;
-            button_Info.Location = new Point(10, 28);
-            button_Info.Name = "button_Info";
-            button_Info.Size = new Size(223, 125);
-            button_Info.TabIndex = 7;
-            button_Info.Text = "Об игре";
-            button_Info.UseVisualStyleBackColor = false;
-            button_Info.Click += button_Info_Click;
+            button_InfoOrMenu.Anchor = AnchorStyles.None;
+            button_InfoOrMenu.BackColor = SystemColors.Highlight;
+            button_InfoOrMenu.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
+            button_InfoOrMenu.FlatAppearance.BorderSize = 10;
+            button_InfoOrMenu.FlatAppearance.CheckedBackColor = Color.Teal;
+            button_InfoOrMenu.Font = new Font("Segoe UI Semibold", 10.125F, FontStyle.Bold);
+            button_InfoOrMenu.ForeColor = SystemColors.ButtonHighlight;
+            button_InfoOrMenu.Location = new Point(10, 28);
+            button_InfoOrMenu.Name = "button_InfoOrMenu";
+            button_InfoOrMenu.Size = new Size(223, 125);
+            button_InfoOrMenu.TabIndex = 7;
+            button_InfoOrMenu.Text = "Об игре";
+            button_InfoOrMenu.UseVisualStyleBackColor = false;
+            button_InfoOrMenu.Click += GetInfoOrSaveGame;
             // 
             // button_return
             // 
@@ -751,6 +688,69 @@
             button_Start.UseVisualStyleBackColor = false;
             button_Start.Click += button_Start_Click;
             // 
+            // flowLayoutPanel_DifficaltyLevel
+            // 
+            flowLayoutPanel_DifficaltyLevel.Anchor = AnchorStyles.None;
+            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_EasyLevel);
+            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_MediumLevel);
+            flowLayoutPanel_DifficaltyLevel.Controls.Add(button_HardLevel);
+            flowLayoutPanel_DifficaltyLevel.Location = new Point(400, 400);
+            flowLayoutPanel_DifficaltyLevel.Name = "flowLayoutPanel_DifficaltyLevel";
+            flowLayoutPanel_DifficaltyLevel.Size = new Size(516, 422);
+            flowLayoutPanel_DifficaltyLevel.TabIndex = 3;
+            flowLayoutPanel_DifficaltyLevel.Visible = false;
+            // 
+            // button_EasyLevel
+            // 
+            button_EasyLevel.Anchor = AnchorStyles.None;
+            button_EasyLevel.BackColor = SystemColors.Highlight;
+            button_EasyLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
+            button_EasyLevel.FlatAppearance.BorderSize = 10;
+            button_EasyLevel.FlatAppearance.CheckedBackColor = Color.Teal;
+            button_EasyLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_EasyLevel.ForeColor = SystemColors.ButtonHighlight;
+            button_EasyLevel.Location = new Point(3, 3);
+            button_EasyLevel.Name = "button_EasyLevel";
+            button_EasyLevel.Size = new Size(502, 129);
+            button_EasyLevel.TabIndex = 14;
+            button_EasyLevel.Text = "Легкий";
+            button_EasyLevel.UseVisualStyleBackColor = false;
+            button_EasyLevel.Click += ChooseLevel;
+            // 
+            // button_MediumLevel
+            // 
+            button_MediumLevel.Anchor = AnchorStyles.None;
+            button_MediumLevel.BackColor = SystemColors.Highlight;
+            button_MediumLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
+            button_MediumLevel.FlatAppearance.BorderSize = 10;
+            button_MediumLevel.FlatAppearance.CheckedBackColor = Color.Teal;
+            button_MediumLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_MediumLevel.ForeColor = SystemColors.ButtonHighlight;
+            button_MediumLevel.Location = new Point(3, 138);
+            button_MediumLevel.Name = "button_MediumLevel";
+            button_MediumLevel.Size = new Size(502, 129);
+            button_MediumLevel.TabIndex = 13;
+            button_MediumLevel.Text = "Средний";
+            button_MediumLevel.UseVisualStyleBackColor = false;
+            button_MediumLevel.Click += ChooseLevel;
+            // 
+            // button_HardLevel
+            // 
+            button_HardLevel.Anchor = AnchorStyles.None;
+            button_HardLevel.BackColor = SystemColors.Highlight;
+            button_HardLevel.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 192);
+            button_HardLevel.FlatAppearance.BorderSize = 10;
+            button_HardLevel.FlatAppearance.CheckedBackColor = Color.Teal;
+            button_HardLevel.Font = new Font("Segoe UI Semibold", 12.125F, FontStyle.Bold);
+            button_HardLevel.ForeColor = SystemColors.ButtonHighlight;
+            button_HardLevel.Location = new Point(3, 273);
+            button_HardLevel.Name = "button_HardLevel";
+            button_HardLevel.Size = new Size(502, 129);
+            button_HardLevel.TabIndex = 12;
+            button_HardLevel.Text = "Сложный";
+            button_HardLevel.UseVisualStyleBackColor = false;
+            button_HardLevel.Click += ChooseLevel;
+            // 
             // button_StartGame
             // 
             button_StartGame.Location = new Point(0, 0);
@@ -767,6 +767,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form_KnowledgeMatrix";
             Text = "Матрица знаний";
+            FormClosing += KnoledgeMatrix_FormClosing;
             panel_Main.ResumeLayout(false);
             panel_Question.ResumeLayout(false);
             panel_YourLevel.ResumeLayout(false);
@@ -777,11 +778,11 @@
             panel_Category5.ResumeLayout(false);
             panel_Category6.ResumeLayout(false);
             panel_Category1.ResumeLayout(false);
-            flowLayoutPanel_DifficaltyLevel.ResumeLayout(false);
             panel_MenuButtons.ResumeLayout(false);
             panel_Title.ResumeLayout(false);
             panel_Coins.ResumeLayout(false);
             panel_StartGame.ResumeLayout(false);
+            flowLayoutPanel_DifficaltyLevel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -810,7 +811,7 @@
         private Panel panel_Coins;
         private Label label_Coins;
         private Panel panel_MenuButtons;
-        private Button button_Info;
+        private Button button_InfoOrMenu;
         private Button button_return;
         private Button button_50;
         private Button button_FriendHelp;
